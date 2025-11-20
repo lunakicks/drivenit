@@ -6,6 +6,7 @@ export interface AuthState {
     user: (User & { hearts?: number; xp?: number; streak?: number; last_study_date?: string }) | null;
     bookmarks: string[]; // Array of question IDs
     flags: string[]; // Array of question IDs
+    wrongAnswers: string[]; // Array of question IDs
     loading: boolean;
     checkUser: () => Promise<void>;
     signOut: () => Promise<void>;
@@ -13,6 +14,7 @@ export interface AuthState {
     addXP: (amount: number) => Promise<void>;
     toggleBookmark: (questionId: string) => Promise<void>;
     toggleFlag: (questionId: string) => Promise<void>;
+    recordWrongAnswer: (questionId: string) => Promise<void>;
     checkStreak: () => Promise<void>;
 }
 
@@ -20,7 +22,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     user: null,
     bookmarks: [],
     flags: [],
+    wrongAnswers: [],
     loading: true,
+
     checkUser: async () => {
         try {
             const { data: { session } } = await supabase.auth.getSession();
@@ -44,14 +48,22 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                     .select('question_id')
                     .eq('user_id', session.user.id);
 
+                // Fetch wrong answers (user_progress with status 'incorrect')
+                const { data: progressData } = await supabase
+                    .from('user_progress')
+                    .select('question_id')
+                    .eq('user_id', session.user.id)
+                    .eq('status', 'incorrect');
+
                 set({
                     user: { ...session.user, ...profile },
                     bookmarks: bookmarksData?.map(b => b.question_id) || [],
                     flags: flagsData?.map(f => f.question_id) || [],
+                    wrongAnswers: progressData?.map(p => p.question_id) || [],
                     loading: false
                 });
             } else {
-                set({ user: null, bookmarks: [], flags: [], loading: false });
+                set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], loading: false });
             }
 
             supabase.auth.onAuthStateChange(async (_event, session) => {
@@ -72,13 +84,20 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                         .select('question_id')
                         .eq('user_id', session.user.id);
 
+                    const { data: progressData } = await supabase
+                        .from('user_progress')
+                        .select('question_id')
+                        .eq('user_id', session.user.id)
+                        .eq('status', 'incorrect');
+
                     set({
                         user: { ...session.user, ...profile },
                         bookmarks: bookmarksData?.map(b => b.question_id) || [],
-                        flags: flagsData?.map(f => f.question_id) || []
+                        flags: flagsData?.map(f => f.question_id) || [],
+                        wrongAnswers: progressData?.map(p => p.question_id) || []
                     });
                 } else {
-                    set({ user: null, bookmarks: [], flags: [] });
+                    set({ user: null, bookmarks: [], flags: [], wrongAnswers: [] });
                 }
             });
         } catch (error) {
@@ -86,10 +105,12 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             set({ loading: false });
         }
     },
+
     signOut: async () => {
         await supabase.auth.signOut();
-        set({ user: null, bookmarks: [], flags: [] });
+        set({ user: null, bookmarks: [], flags: [], wrongAnswers: [] });
     },
+
     updateHearts: async (count: number) => {
         const { user } = get();
         if (!user) return;
@@ -107,6 +128,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
         if (error) console.error('Error updating hearts:', error);
     },
+
     addXP: async (amount: number) => {
         const { user } = get();
         if (!user) return;
@@ -124,6 +146,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
         if (error) console.error('Error updating XP:', error);
     },
+
     toggleBookmark: async (questionId: string) => {
         const { user, bookmarks } = get();
         if (!user) return;
@@ -152,6 +175,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             if (error) console.error('Error adding bookmark:', error);
         }
     },
+
     toggleFlag: async (questionId: string) => {
         const { user, flags } = get();
         if (!user) return;
@@ -180,6 +204,28 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             if (error) console.error('Error adding flag:', error);
         }
     },
+
+    recordWrongAnswer: async (questionId: string) => {
+        const { user, wrongAnswers } = get();
+        if (!user) return;
+
+        if (!wrongAnswers.includes(questionId)) {
+            set({ wrongAnswers: [...wrongAnswers, questionId] });
+
+            // Persist to user_progress
+            const { error } = await supabase
+                .from('user_progress')
+                .upsert({
+                    user_id: user.id,
+                    question_id: questionId,
+                    status: 'incorrect',
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'user_id,question_id' });
+
+            if (error) console.error('Error recording wrong answer:', error);
+        }
+    },
+
     checkStreak: async () => {
         const { user } = get();
         if (!user) return;

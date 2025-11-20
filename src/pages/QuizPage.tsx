@@ -5,32 +5,10 @@ import { useAuthStore } from '../stores/useAuthStore';
 import { QuizHeader } from '../components/quiz/QuizHeader';
 import { FlashCard } from '../components/quiz/FlashCard';
 import { ExplanationView } from '../components/quiz/ExplanationView';
-import type { Question } from '../types';
+
 import clsx from 'clsx';
 
-// Mock Data for Quiz
-const MOCK_QUESTIONS: Question[] = [
-    {
-        id: 'q1',
-        category_id: '1',
-        question_text_it: 'Il segnale raffigurato indica un divieto di sosta?',
-        explanation_it: 'No, questo segnale indica un divieto di fermata, che è più restrittivo.',
-        options_it: ['Vero', 'Falso'],
-        correct_option_index: 1,
-        difficulty_level: 1,
-        image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Italian_traffic_signs_-_divieto_di_fermata.svg/1200px-Italian_traffic_signs_-_divieto_di_fermata.svg.png'
-    },
-    {
-        id: 'q2',
-        category_id: '1',
-        question_text_it: 'Il segnale raffigurato preannuncia una curva pericolosa a destra?',
-        explanation_it: 'Sì, questo è il segnale di curva pericolosa a destra.',
-        options_it: ['Vero', 'Falso'],
-        correct_option_index: 0,
-        difficulty_level: 1,
-        image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Italian_traffic_signs_-_curva_pericolosa_a_destra.svg/600px-Italian_traffic_signs_-_curva_pericolosa_a_destra.svg.png'
-    }
-];
+import { MOCK_QUESTIONS } from '../data/questions';
 
 export const QuizPage: React.FC = () => {
     const { categoryId } = useParams();
@@ -44,7 +22,7 @@ export const QuizPage: React.FC = () => {
         isComplete
     } = useQuizStore();
 
-    const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak } = useAuthStore();
+    const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak, recordWrongAnswer } = useAuthStore();
 
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isChecked, setIsChecked] = useState(false);
@@ -88,6 +66,7 @@ export const QuizPage: React.FC = () => {
             checkStreak();
         } else {
             updateHearts(-1);
+            recordWrongAnswer(currentQuestion.id);
         }
     };
 

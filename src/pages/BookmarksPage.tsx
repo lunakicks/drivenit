@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthStore } from '../stores/useAuthStore';
-import { supabase } from '../lib/supabase';
+
 import type { Question } from '../types';
 import { Bookmark } from 'lucide-react';
+
+import { MOCK_QUESTIONS } from '../data/questions';
 
 export const BookmarksPage: React.FC = () => {
     const { bookmarks } = useAuthStore();
@@ -17,17 +19,12 @@ export const BookmarksPage: React.FC = () => {
                 return;
             }
 
-            // In a real app, we would fetch questions by IDs from the DB
-            // For now, we might not have an endpoint to fetch multiple questions by ID easily without RLS policies allowing it
-            // But let's try to fetch them from the 'questions' table
-            const { data } = await supabase
-                .from('questions')
-                .select('*')
-                .in('id', bookmarks);
+            // Filter mock questions that are in the bookmarks array
+            // In a real app with full DB seeding, we would fetch from Supabase
+            // const { data } = await supabase.from('questions').select('*').in('id', bookmarks);
 
-            if (data) {
-                setSavedQuestions(data as Question[]);
-            }
+            const foundQuestions = MOCK_QUESTIONS.filter(q => bookmarks.includes(q.id));
+            setSavedQuestions(foundQuestions);
             setLoading(false);
         };
 
