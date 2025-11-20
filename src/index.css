@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", sans-serif;
+
+  --color-feather-green: #58cc02;
+  --color-feather-green-dark: #46a302;
+  --color-card-face: #ffffff;
+  --color-card-border: #e5e5e5;
+  --color-wrong-red: #ff4b4b;
+  --color-wrong-red-dark: #ea2b2b;
+  --color-sky-blue: #1cb0f6;
+  --color-sky-blue-dark: #1899d6;
+  --color-macaw-blue: #1cb0f6;
+  --color-mustard-yellow: #ffc800;
+  --color-mustard-yellow-dark: #e5b400;
+  --color-eel-grey: #4b4b4b;
+  --color-hare-grey: #afafaf;
+  --color-swan-white: #ffffff;
+  --color-polar-night: #202f36;
+
+  --shadow-btn: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0px 2px 0px 0px #e5e5e5;
+}
+
+/* Custom Animations */
+@keyframes bounce-sm {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-sm {
+  animation: bounce-sm 1s infinite;
+}
