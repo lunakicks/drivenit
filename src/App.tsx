@@ -7,9 +7,9 @@ import { useAuthStore } from './stores/useAuthStore';
 
 import { Home } from './pages/Home';
 import { QuizPage } from './pages/QuizPage';
-const Practice = () => <div className="p-4"><h1 className="text-2xl font-bold text-eel-grey">Practice</h1></div>;
-const Bookmarks = () => <div className="p-4"><h1 className="text-2xl font-bold text-eel-grey">Bookmarks</h1></div>;
-const Profile = () => <div className="p-4"><h1 className="text-2xl font-bold text-eel-grey">Profile</h1></div>;
+import { PracticePage } from './pages/PracticePage';
+import { BookmarksPage } from './pages/BookmarksPage';
+import { ProfilePage } from './pages/ProfilePage';
 
 function App() {
   const { checkUser, loading } = useAuthStore();
@@ -44,7 +44,7 @@ function App() {
         <Route path="/practice" element={
           <ProtectedRoute>
             <MobileLayout>
-              <Practice />
+              <PracticePage />
             </MobileLayout>
           </ProtectedRoute>
         } />
@@ -52,7 +52,7 @@ function App() {
         <Route path="/bookmarks" element={
           <ProtectedRoute>
             <MobileLayout>
-              <Bookmarks />
+              <BookmarksPage />
             </MobileLayout>
           </ProtectedRoute>
         } />
@@ -60,7 +60,7 @@ function App() {
         <Route path="/profile" element={
           <ProtectedRoute>
             <MobileLayout>
-              <Profile />
+              <ProfilePage />
             </MobileLayout>
           </ProtectedRoute>
         } />
