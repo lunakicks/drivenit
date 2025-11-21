@@ -3,6 +3,7 @@ import { Volume2, Bookmark, Languages, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import type { Question } from '../../types';
 import { translateQuestion } from '../../lib/translation';
+import { InteractiveText } from './InteractiveText';
 
 interface FlashCardProps {
     question: Question;
@@ -69,7 +70,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                             <Volume2 size={24} />
                         </button>
                         <div className="p-3 border-2 border-card-border rounded-2xl rounded-tl-none bg-white relative group">
-                            <p className="text-lg text-eel-grey font-medium">{displayText}</p>
+                            <InteractiveText text={displayText} className="text-lg text-eel-grey font-medium" />
                         </div>
                     </div>
 
