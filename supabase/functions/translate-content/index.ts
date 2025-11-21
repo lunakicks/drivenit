@@ -54,13 +54,14 @@ serve(async (req) => {
       
       Question: "${question.question_text_it}"
       Options: ${JSON.stringify(question.options_it)}
-      Explanation: "${question.explanation_it || ''}"
+      Explanation: "${question.explanation_it || 'Not provided. Please generate a brief explanation for the correct answer.'}"
+      Correct Answer Index: ${question.correct_option_index}
       
       Return ONLY a JSON object with the following structure:
       {
         "question_text": "Translated question text",
         "options": ["Translated Option 1", "Translated Option 2"],
-        "explanation": "Translated explanation"
+        "explanation": "Translated explanation (or generated if original was missing)"
       }
     `
 
