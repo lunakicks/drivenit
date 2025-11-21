@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { User, Heart, Flame, LogOut } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export const ProfilePage: React.FC = () => {
     const { user, signOut } = useAuthStore();
@@ -38,7 +39,10 @@ export const ProfilePage: React.FC = () => {
             </div>
 
             <button
-                onClick={signOut}
+                onClick={() => {
+                    signOut();
+                    toast.success('Signed out successfully');
+                }}
                 className="w-full py-3 rounded-xl border-2 border-card-border font-bold text-eel-grey uppercase tracking-widest hover:bg-gray-50 flex items-center justify-center gap-2"
             >
                 <LogOut size={20} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { MOCK_QUESTIONS } from '../data/questions';
 import type { Question } from '../types';
-import { Brain, Zap, Target, AlertCircle } from 'lucide-react';
+import { Zap, Target, AlertCircle } from 'lucide-react';
 
 export const PracticePage: React.FC = () => {
     const { wrongAnswers } = useAuthStore();

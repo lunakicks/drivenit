@@ -3,7 +3,7 @@ import { supabase } from '../lib/supabase';
 import type { User } from '@supabase/supabase-js';
 
 export interface AuthState {
-    user: (User & { hearts?: number; xp?: number; streak?: number; last_study_date?: string }) | null;
+    user: (User & { hearts?: number; xp?: number; streak?: number; last_study_date?: string; completed_categories?: string[] }) | null;
     bookmarks: string[]; // Array of question IDs
     flags: string[]; // Array of question IDs
     wrongAnswers: string[]; // Array of question IDs
@@ -15,6 +15,7 @@ export interface AuthState {
     toggleBookmark: (questionId: string) => Promise<void>;
     toggleFlag: (questionId: string) => Promise<void>;
     recordWrongAnswer: (questionId: string) => Promise<void>;
+    completeCategory: (categoryId: string) => Promise<void>;
     checkStreak: () => Promise<void>;
 }
 
@@ -107,15 +108,25 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     },
 
     signOut: async () => {
-        await supabase.auth.signOut();
-        set({ user: null, bookmarks: [], flags: [], wrongAnswers: [] });
+        try {
+            await supabase.auth.signOut();
+        } catch (error) {
+            console.error('Error signing out:', error);
+        } finally {
+            set({ user: null, bookmarks: [], flags: [], wrongAnswers: [] });
+        }
     },
 
     updateHearts: async (count: number) => {
         const { user } = get();
-        if (!user) return;
+        if (!user) {
+            console.error('updateHearts: User not found');
+            return;
+        }
 
+        console.log('updateHearts: Current hearts:', (user as any).hearts);
         const newHearts = Math.max(0, ((user as any).hearts ?? 5) + count);
+        console.log('updateHearts: New hearts:', newHearts);
 
         // Optimistic update
         set({ user: { ...user, hearts: newHearts } });
@@ -126,7 +137,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             .update({ hearts: newHearts })
             .eq('id', user.id);
 
-        if (error) console.error('Error updating hearts:', error);
+        if (error) {
+            console.error('Error updating hearts:', error);
+        } else {
+            console.log('updateHearts: DB update successful');
+        }
     },
 
     addXP: async (amount: number) => {
@@ -223,6 +238,27 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 }, { onConflict: 'user_id,question_id' });
 
             if (error) console.error('Error recording wrong answer:', error);
+        }
+    },
+
+    completeCategory: async (categoryId: string) => {
+        const { user } = get();
+        if (!user) return;
+
+        const completed = (user as any).completed_categories || [];
+        if (!completed.includes(categoryId)) {
+            const newCompleted = [...completed, categoryId];
+
+            // Optimistic update
+            set({ user: { ...user, completed_categories: newCompleted } });
+
+            // Persist to DB
+            const { error } = await supabase
+                .from('profiles')
+                .update({ completed_categories: newCompleted })
+                .eq('id', user.id);
+
+            if (error) console.error('Error completing category:', error);
         }
     },
 

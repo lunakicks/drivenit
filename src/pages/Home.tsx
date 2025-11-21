@@ -3,6 +3,7 @@ import { CategoryNode } from '../components/dashboard/CategoryNode';
 import type { Category } from '../types';
 import { useNavigate } from 'react-router-dom';
 import { Zap, Heart } from 'lucide-react';
+import { useAuthStore } from '../stores/useAuthStore';
 
 // Mock Data
 const MOCK_CATEGORIES: Category[] = [
@@ -14,7 +15,8 @@ const MOCK_CATEGORIES: Category[] = [
 
 export const Home: React.FC = () => {
     const navigate = useNavigate();
-    // const { user } = useAuthStore(); // In real app, fetch profile for hearts/streak
+    const { user } = useAuthStore();
+    const completedCategories = (user as any)?.completed_categories || [];
 
     const handleCategoryClick = (categoryId: string) => {
         navigate(`/quiz/${categoryId}`);
@@ -31,33 +33,52 @@ export const Home: React.FC = () => {
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1 text-wrong-red font-bold">
                         <Heart className="fill-current" size={24} />
-                        <span>5</span>
+                        <span>{(user as any)?.hearts ?? 5}</span>
                     </div>
                     <div className="flex items-center gap-1 text-mustard-yellow font-bold">
                         <Zap className="fill-current" size={24} />
-                        <span>12</span>
+                        <span>{(user as any)?.xp ?? 0}</span>
                     </div>
                 </div>
             </header>
 
             {/* Map Path */}
             <div className="flex-1 py-8 px-4 flex flex-col items-center gap-8">
-                {MOCK_CATEGORIES.map((category, index) => (
-                    <div
-                        key={category.id}
-                        className="relative"
-                        style={{
-                            marginLeft: index % 2 === 0 ? '0px' : '60px', // Zig-zag effect
-                            marginRight: index % 2 !== 0 ? '0px' : '60px'
-                        }}
-                    >
-                        <CategoryNode
-                            category={category}
-                            status={index === 0 ? 'active' : 'locked'} // Mock status
-                            onClick={() => handleCategoryClick(category.id)}
-                        />
-                    </div>
-                ))}
+                {MOCK_CATEGORIES.map((category, index) => {
+                    const isCompleted = completedCategories.includes(category.id);
+
+                    // First category is always active if not completed
+                    // Subsequent categories are active if the previous one is completed
+                    const isPreviousCompleted = index === 0 || completedCategories.includes(MOCK_CATEGORIES[index - 1].id);
+
+                    let status: 'locked' | 'active' | 'completed' = 'locked';
+                    if (isCompleted) {
+                        status = 'completed';
+                    } else if (isPreviousCompleted) {
+                        status = 'active';
+                    }
+
+                    return (
+                        <div
+                            key={category.id}
+                            className="relative"
+                            style={{
+                                marginLeft: index % 2 === 0 ? '0px' : '60px', // Zig-zag effect
+                                marginRight: index % 2 !== 0 ? '0px' : '60px'
+                            }}
+                        >
+                            <CategoryNode
+                                category={category}
+                                status={status}
+                                onClick={() => {
+                                    if (status !== 'locked') {
+                                        handleCategoryClick(category.id);
+                                    }
+                                }}
+                            />
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

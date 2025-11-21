@@ -11,6 +11,7 @@ create table public.profiles (
   hearts integer default 5,
   streak integer default 0,
   last_study_date date,
+  completed_categories text[] default '{}',
   created_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 

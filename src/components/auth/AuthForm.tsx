@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from '../../lib/supabase';
-import { Mail, Lock, Loader2 } from 'lucide-react';
+import { Mail, Lock, Loader2, Eye, EyeOff } from 'lucide-react';
+import toast from 'react-hot-toast';
 import clsx from 'clsx';
 
 interface AuthFormProps {
@@ -11,6 +12,7 @@ interface AuthFormProps {
 export const AuthForm: React.FC<AuthFormProps> = ({ view, onToggleView }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -26,6 +28,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ view, onToggleView }) => {
                     password,
                 });
                 if (error) throw error;
+                toast.success('Account created successfully! Please check your email.');
                 // For demo purposes, we might want to auto-login or show a success message
             } else {
                 const { error } = await supabase.auth.signInWithPassword({
@@ -33,8 +36,11 @@ export const AuthForm: React.FC<AuthFormProps> = ({ view, onToggleView }) => {
                     password,
                 });
                 if (error) throw error;
+                toast.success('Logged in successfully!');
             }
         } catch (err: any) {
+            console.error(err);
+            toast.error(err.message || 'An error occurred during authentication');
             setError(err.message);
         } finally {
             setLoading(false);
@@ -68,13 +74,20 @@ export const AuthForm: React.FC<AuthFormProps> = ({ view, onToggleView }) => {
                     <div className="relative">
                         <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-hare-grey" size={20} />
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full pl-12 pr-4 py-3 bg-swan-white border-2 border-card-border rounded-xl focus:border-sky-blue focus:outline-none transition-colors font-bold text-eel-grey placeholder-hare-grey"
+                            className="w-full pl-12 pr-12 py-3 bg-swan-white border-2 border-card-border rounded-xl focus:border-sky-blue focus:outline-none transition-colors font-bold text-eel-grey placeholder-hare-grey"
                             placeholder="••••••••"
                             required
                         />
+                        <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-hare-grey hover:text-eel-grey transition-colors"
+                        >
+                            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                        </button>
                     </div>
                 </div>
 
