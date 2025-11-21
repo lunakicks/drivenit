@@ -1,26 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CategoryNode } from '../components/dashboard/CategoryNode';
 import type { Category } from '../types';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Heart } from 'lucide-react';
+import { Zap, Heart, Loader2 } from 'lucide-react';
 import { useAuthStore } from '../stores/useAuthStore';
-
-// Mock Data
-const MOCK_CATEGORIES: Category[] = [
-    { id: '1', slug: 'road-signs', title_it: 'Segnali Stradali', order_index: 0, icon_name: 'signpost' },
-    { id: '2', slug: 'right-of-way', title_it: 'Precedenza', order_index: 1, icon_name: 'arrow-right' },
-    { id: '3', slug: 'speed-limits', title_it: 'Limiti di Velocità', order_index: 2, icon_name: 'gauge' },
-    { id: '4', slug: 'parking', title_it: 'Sosta e Fermata', order_index: 3, icon_name: 'parking' },
-];
+import { supabase } from '../lib/supabase';
 
 export const Home: React.FC = () => {
     const navigate = useNavigate();
     const { user } = useAuthStore();
     const completedCategories = (user as any)?.completed_categories || [];
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('categories')
+                    .select('*')
+                    .order('order_index', { ascending: true })
+                    .order('created_at', { ascending: true });
+
+                if (error) throw error;
+                setCategories(data || []);
+            } catch (error) {
+                console.error('Error fetching categories:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCategories();
+    }, []);
 
     const handleCategoryClick = (categoryId: string) => {
         navigate(`/quiz/${categoryId}`);
     };
+
+    if (loading) {
+        return <div className="min-h-screen flex items-center justify-center"><Loader2 className="animate-spin text-feather-green" size={40} /></div>;
+    }
 
     return (
         <div className="flex flex-col min-h-full">
@@ -44,12 +64,12 @@ export const Home: React.FC = () => {
 
             {/* Map Path */}
             <div className="flex-1 py-8 px-4 flex flex-col items-center gap-8">
-                {MOCK_CATEGORIES.map((category, index) => {
+                {categories.map((category, index) => {
                     const isCompleted = completedCategories.includes(category.id);
 
                     // First category is always active if not completed
                     // Subsequent categories are active if the previous one is completed
-                    const isPreviousCompleted = index === 0 || completedCategories.includes(MOCK_CATEGORIES[index - 1].id);
+                    const isPreviousCompleted = index === 0 || completedCategories.includes(categories[index - 1].id);
 
                     let status: 'locked' | 'active' | 'completed' = 'locked';
                     if (isCompleted) {

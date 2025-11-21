@@ -9,7 +9,7 @@ import { ExplanationView } from '../components/quiz/ExplanationView';
 
 import clsx from 'clsx';
 
-import { MOCK_QUESTIONS } from '../data/questions';
+
 
 export const QuizPage: React.FC = () => {
     const { categoryId } = useParams();
@@ -34,8 +34,32 @@ export const QuizPage: React.FC = () => {
     const [translation, setTranslation] = useState<{ q: string, explanation: string, opts: string[] } | null>(null);
 
     useEffect(() => {
-        // In real app, fetch questions by categoryId
-        startQuiz(MOCK_QUESTIONS);
+        const fetchQuestions = async () => {
+            if (!categoryId) return;
+
+            try {
+                const { data, error } = await supabase
+                    .from('questions')
+                    .select('*')
+                    .eq('category_id', categoryId);
+
+                if (error) throw error;
+
+                if (data) {
+                    // Map DB questions to frontend Question type if needed
+                    // Currently the schema matches well, but we might need to parse options if they are JSON
+                    const mappedQuestions = data.map((q: any) => ({
+                        ...q,
+                        options_it: typeof q.options_it === 'string' ? JSON.parse(q.options_it) : q.options_it
+                    }));
+                    startQuiz(mappedQuestions);
+                }
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+            }
+        };
+
+        fetchQuestions();
     }, [categoryId, startQuiz]);
 
     useEffect(() => {
