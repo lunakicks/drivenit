@@ -56,8 +56,23 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                     .eq('user_id', session.user.id)
                     .eq('status', 'incorrect');
 
+                // Check for daily reset
+                const today = new Date().toISOString().split('T')[0];
+                const lastStudyDate = profile?.last_study_date;
+                let hearts = profile?.hearts ?? 5; // Default to 5 if undefined
+
+                // If it's a new day, reset hearts to 5
+                if (lastStudyDate !== today) {
+                    hearts = 5;
+                    // We'll update the DB with the new date and hearts
+                    await supabase
+                        .from('profiles')
+                        .update({ hearts: 5, last_study_date: today })
+                        .eq('id', session.user.id);
+                }
+
                 set({
-                    user: { ...session.user, ...profile },
+                    user: { ...session.user, ...profile, hearts, last_study_date: today },
                     bookmarks: bookmarksData?.map(b => b.question_id) || [],
                     flags: flagsData?.map(f => f.question_id) || [],
                     wrongAnswers: progressData?.map(p => p.question_id) || [],
@@ -91,8 +106,21 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                         .eq('user_id', session.user.id)
                         .eq('status', 'incorrect');
 
+                    // Check for daily reset
+                    const today = new Date().toISOString().split('T')[0];
+                    const lastStudyDate = profile?.last_study_date;
+                    let hearts = profile?.hearts ?? 5;
+
+                    if (lastStudyDate !== today) {
+                        hearts = 5;
+                        await supabase
+                            .from('profiles')
+                            .update({ hearts: 5, last_study_date: today })
+                            .eq('id', session.user.id);
+                    }
+
                     set({
-                        user: { ...session.user, ...profile },
+                        user: { ...session.user, ...profile, hearts, last_study_date: today },
                         bookmarks: bookmarksData?.map(b => b.question_id) || [],
                         flags: flagsData?.map(f => f.question_id) || [],
                         wrongAnswers: progressData?.map(p => p.question_id) || []
