@@ -79,7 +79,7 @@ serve(async (req) => {
                 'X-Title': 'Patente Learning App'
             },
             body: JSON.stringify({
-                model: 'openai/gpt-3.5-turbo',
+                model: 'openai/gpt-oss-20b:free', // Align with translate-content
                 messages: [{ role: 'user', content: prompt }]
             })
         })

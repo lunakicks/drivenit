@@ -28,7 +28,7 @@ serve(async (req) => {
             .eq('language_code', target_lang)
             .single()
 
-        if (existingTranslation) {
+        if (existingTranslation && existingTranslation.explanation) {
             return new Response(
                 JSON.stringify({
                     question_text: existingTranslation.question_text,
