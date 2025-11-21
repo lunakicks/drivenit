@@ -165,15 +165,19 @@ export const QuizPage: React.FC = () => {
 
             {/* Explanation View (After Checking) */}
             {isChecked && isCorrect !== null && (
-                <ExplanationView
-                    isCorrect={isCorrect}
-                    explanation={
-                        translated && translation
-                            ? translation.explanation
-                            : (currentQuestion.explanation_it || "Loading explanation...")
-                    }
-                    onContinue={handleContinue}
-                />
+                (() => {
+                    const explanationText = translated && translation
+                        ? translation.explanation
+                        : (currentQuestion.explanation_it || "Loading explanation...");
+                    console.log('Rendering ExplanationView. Translated:', translated, 'Translation:', translation, 'Explanation Text:', explanationText);
+                    return (
+                        <ExplanationView
+                            isCorrect={isCorrect}
+                            explanation={explanationText}
+                            onContinue={handleContinue}
+                        />
+                    );
+                })()
             )}
         </div>
     );

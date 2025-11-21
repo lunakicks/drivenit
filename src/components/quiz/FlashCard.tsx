@@ -41,7 +41,9 @@ export const FlashCard: React.FC<FlashCardProps> = ({
         }
 
         if (!translation) {
+            console.log('Fetching translation for question:', question.id);
             const result = await translateQuestion(question.id, 'en'); // Hardcoded 'en' for now
+            console.log('Translation result:', result);
             if (result) {
                 setTranslation({ q: result.question_text, explanation: result.explanation, opts: result.options });
             }
