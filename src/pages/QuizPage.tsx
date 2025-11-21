@@ -149,7 +149,7 @@ export const QuizPage: React.FC = () => {
 
             {/* Bottom Action Bar (Before Checking) */}
             {!isChecked && (
-                <div className="fixed bottom-0 w-full max-w-md border-t-2 border-card-border p-4 bg-white">
+                <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t-2 border-card-border p-4 bg-white">
                     <button
                         onClick={handleCheck}
                         disabled={selectedOption === null}
