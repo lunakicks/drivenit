@@ -29,28 +29,57 @@ serve(async (req) => {
 
         if (qError || !question) throw new Error('Question not found')
 
-        // 2. Prepare Prompt for OpenRouter
+        // 2. Check if explanation already exists
+        if (target_lang === 'it' && question.explanation_it) {
+            return new Response(
+                JSON.stringify({ explanation: question.explanation_it }),
+                { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+            )
+        }
+
+        // Check translation table if target is not IT
+        if (target_lang !== 'it') {
+            const { data: existingTranslation } = await supabaseClient
+                .from('translations')
+                .select('explanation')
+                .eq('question_id', question_id)
+                .eq('language_code', target_lang)
+                .single()
+
+            if (existingTranslation?.explanation) {
+                return new Response(
+                    JSON.stringify({ explanation: existingTranslation.explanation }),
+                    { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+                )
+            }
+        }
+
+        // 3. Prepare Prompt for OpenRouter
         const prompt = `
-      You are a driving instructor. Explain why the answer is correct for this question.
+      You are an expert driving instructor. The student answered the following question about Italian road rules.
+      
       Question: "${question.question_text_it}"
       Options: ${JSON.stringify(question.options_it)}
-      Correct Answer Index: ${question.correct_option_index}
+      Correct Answer Index: ${question.correct_option_index} (0-based)
       
-      Provide a concise explanation in ${target_lang === 'it' ? 'Italian' : 'English'}.
-      Keep it under 2 sentences.
+      Please provide a clear, helpful, and meaningful explanation of WHY this is the correct answer. 
+      Explain the specific road rule or sign meaning involved.
+      
+      Target Language: ${target_lang === 'it' ? 'Italian' : 'English'}
+      Length: 2-3 sentences.
     `
 
-        // 3. Call OpenRouter
+        // 4. Call OpenRouter
         const openRouterRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${Deno.env.get('OPENROUTER_API_KEY')}`,
                 'Content-Type': 'application/json',
-                'HTTP-Referer': 'https://patente-app.com', // Required by OpenRouter
+                'HTTP-Referer': 'https://patente-app.com',
                 'X-Title': 'Patente Learning App'
             },
             body: JSON.stringify({
-                model: 'openai/gpt-3.5-turbo', // Can be changed to any model supported by OpenRouter
+                model: 'openai/gpt-3.5-turbo',
                 messages: [{ role: 'user', content: prompt }]
             })
         })

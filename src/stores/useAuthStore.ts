@@ -124,8 +124,14 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             return;
         }
 
-        console.log('updateHearts: Current hearts:', (user as any).hearts);
-        const newHearts = Math.max(0, ((user as any).hearts ?? 5) + count);
+        const currentHearts = (user as any).hearts ?? 5;
+        console.log('updateHearts: Current hearts:', currentHearts);
+
+        // Clamp between 0 and 5
+        let newHearts = currentHearts + count;
+        if (newHearts > 5) newHearts = 5;
+        if (newHearts < 0) newHearts = 0;
+
         console.log('updateHearts: New hearts:', newHearts);
 
         // Optimistic update
@@ -249,13 +255,20 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         if (!completed.includes(categoryId)) {
             const newCompleted = [...completed, categoryId];
 
+            // Add 2 hearts for completing a category (max 5)
+            const currentHearts = (user as any).hearts ?? 5;
+            const newHearts = Math.min(5, currentHearts + 2);
+
             // Optimistic update
-            set({ user: { ...user, completed_categories: newCompleted } });
+            set({ user: { ...user, completed_categories: newCompleted, hearts: newHearts } });
 
             // Persist to DB
             const { error } = await supabase
                 .from('profiles')
-                .update({ completed_categories: newCompleted })
+                .update({
+                    completed_categories: newCompleted,
+                    hearts: newHearts
+                })
                 .eq('id', user.id);
 
             if (error) console.error('Error completing category:', error);
