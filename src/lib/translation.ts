@@ -19,7 +19,7 @@ export const translateQuestion = async (questionId: string, targetLang: string):
             .eq('language_code', targetLang)
             .single();
 
-        if (data) {
+        if (data && data.explanation) {
             return {
                 question_text: data.question_text,
                 explanation: data.explanation,
