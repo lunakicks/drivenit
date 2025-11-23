@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { QuizHeader } from '../components/quiz/QuizHeader';
 import { FlashCard } from '../components/quiz/FlashCard';
 import { ExplanationView } from '../components/quiz/ExplanationView';
+import { PageTransition } from '../components/layout/PageTransition';
 
 import clsx from 'clsx';
 
@@ -129,56 +130,58 @@ export const QuizPage: React.FC = () => {
     const isFlagged = flags.includes(currentQuestion.id);
 
     return (
-        <div className="min-h-screen bg-swan-white flex flex-col relative">
-            <QuizHeader progress={progress} hearts={hearts} />
+        <PageTransition>
+            <div className="min-h-screen bg-swan-white flex flex-col relative">
+                <QuizHeader progress={progress} hearts={hearts} />
 
-            <FlashCard
-                question={currentQuestion}
-                selectedOptionIndex={selectedOption}
-                onOptionSelect={setSelectedOption}
-                isChecked={isChecked}
-                onBookmark={() => user && toggleBookmark(currentQuestion.id)}
-                onFlag={() => user && toggleFlag(currentQuestion.id)}
-                isBookmarked={isBookmarked}
-                isFlagged={isFlagged}
-                translated={translated}
-                setTranslated={setTranslated}
-                translation={translation}
-                setTranslation={setTranslation}
-            />
+                <FlashCard
+                    question={currentQuestion}
+                    selectedOptionIndex={selectedOption}
+                    onOptionSelect={setSelectedOption}
+                    isChecked={isChecked}
+                    onBookmark={() => user && toggleBookmark(currentQuestion.id)}
+                    onFlag={() => user && toggleFlag(currentQuestion.id)}
+                    isBookmarked={isBookmarked}
+                    isFlagged={isFlagged}
+                    translated={translated}
+                    setTranslated={setTranslated}
+                    translation={translation}
+                    setTranslation={setTranslation}
+                />
 
-            {/* Bottom Action Bar (Before Checking) */}
-            {!isChecked && (
-                <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t-2 border-card-border p-4 bg-white">
-                    <button
-                        onClick={handleCheck}
-                        disabled={selectedOption === null}
-                        className={clsx(
-                            "w-full py-3 rounded-xl font-extrabold text-white uppercase tracking-widest shadow-btn transition-transform active:translate-y-[4px] active:shadow-none",
-                            selectedOption !== null ? "bg-feather-green hover:bg-feather-green-dark" : "bg-hare-grey cursor-not-allowed"
-                        )}
-                    >
-                        Check
-                    </button>
-                </div>
-            )}
+                {/* Bottom Action Bar (Before Checking) */}
+                {!isChecked && (
+                    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md border-t-2 border-card-border p-4 bg-white">
+                        <button
+                            onClick={handleCheck}
+                            disabled={selectedOption === null}
+                            className={clsx(
+                                "w-full py-3 rounded-xl font-extrabold text-white uppercase tracking-widest shadow-btn transition-transform active:translate-y-[4px] active:shadow-none",
+                                selectedOption !== null ? "bg-feather-green hover:bg-feather-green-dark" : "bg-hare-grey cursor-not-allowed"
+                            )}
+                        >
+                            Check
+                        </button>
+                    </div>
+                )}
 
-            {/* Explanation View (After Checking) */}
-            {isChecked && isCorrect !== null && (
-                (() => {
-                    const explanationText = translated && translation
-                        ? translation.explanation
-                        : (currentQuestion.explanation_it || "Loading explanation...");
-                    console.log('Rendering ExplanationView. Translated:', translated, 'Translation:', translation, 'Explanation Text:', explanationText);
-                    return (
-                        <ExplanationView
-                            isCorrect={isCorrect}
-                            explanation={explanationText}
-                            onContinue={handleContinue}
-                        />
-                    );
-                })()
-            )}
-        </div>
+                {/* Explanation View (After Checking) */}
+                {isChecked && isCorrect !== null && (
+                    (() => {
+                        const explanationText = translated && translation
+                            ? translation.explanation
+                            : (currentQuestion.explanation_it || "Loading explanation...");
+                        console.log('Rendering ExplanationView. Translated:', translated, 'Translation:', translation, 'Explanation Text:', explanationText);
+                        return (
+                            <ExplanationView
+                                isCorrect={isCorrect}
+                                explanation={explanationText}
+                                onContinue={handleContinue}
+                            />
+                        );
+                    })()
+                )}
+            </div>
+        </PageTransition>
     );
 };

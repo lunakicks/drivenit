@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { AnimatePresence } from 'framer-motion';
 import { MobileLayout } from './components/layout/MobileLayout';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { AuthPage } from './pages/AuthPage';
@@ -12,21 +13,12 @@ import { PracticePage } from './pages/PracticePage';
 import { BookmarksPage } from './pages/BookmarksPage';
 import { ProfilePage } from './pages/ProfilePage';
 
-function App() {
-  const { checkUser, loading } = useAuthStore();
-
-  useEffect(() => {
-    checkUser();
-  }, [checkUser]);
-
-  if (loading) {
-    return <div className="min-h-screen flex items-center justify-center text-feather-green font-bold text-xl">Loading...</div>;
-  }
+const AppRoutes = () => {
+  const location = useLocation();
 
   return (
-    <Router>
-      <Toaster position="top-center" />
-      <Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         <Route path="/login" element={<AuthPage />} />
 
         <Route path="/" element={
@@ -69,6 +61,25 @@ function App() {
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+    </AnimatePresence>
+  );
+};
+
+function App() {
+  const { checkUser, loading } = useAuthStore();
+
+  useEffect(() => {
+    checkUser();
+  }, [checkUser]);
+
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center text-feather-green font-bold text-xl">Loading...</div>;
+  }
+
+  return (
+    <Router>
+      <Toaster position="top-center" />
+      <AppRoutes />
     </Router>
   );
 }
