@@ -79,6 +79,46 @@ export const QuizPage: React.FC = () => {
 
     const currentQuestion = questions[currentQuestionIndex];
 
+    // Pre-fetch translation and explanation when question loads
+    useEffect(() => {
+        if (!currentQuestion) return;
+
+        const preFetchData = async () => {
+            // 1. Check/Generate Italian Explanation if missing
+            if (!currentQuestion.explanation_it) {
+                console.log('Pre-fetching explanation for:', currentQuestion.id);
+                try {
+                    const { data, error } = await supabase.functions.invoke('generate-explanation', {
+                        body: { question_id: currentQuestion.id, target_lang: 'it' }
+                    });
+
+                    if (!error && data?.explanation) {
+                        currentQuestion.explanation_it = data.explanation;
+                    }
+                } catch (err) {
+                    console.error('Failed to pre-fetch explanation:', err);
+                }
+            }
+
+            // 2. Pre-fetch Translation (English)
+            // We don't set 'translated' to true, we just cache the data so it's ready
+            if (!translation) {
+                console.log('Pre-fetching translation for:', currentQuestion.id);
+                // Import translateQuestion dynamically if needed, or assume it's available
+                // We need to import it at the top of the file.
+                // For now, I'll use the imported function.
+                import('../lib/translation').then(async ({ translateQuestion }) => {
+                    const result = await translateQuestion(currentQuestion.id, 'en');
+                    if (result) {
+                        setTranslation({ q: result.question_text, explanation: result.explanation, opts: result.options });
+                    }
+                });
+            }
+        };
+
+        preFetchData();
+    }, [currentQuestion, translation]);
+
     if (!currentQuestion) return <div className="p-4">Loading...</div>;
 
     const handleCheck = async () => {
@@ -95,24 +135,6 @@ export const QuizPage: React.FC = () => {
         } else {
             updateHearts(-1);
             recordWrongAnswer(currentQuestion.id);
-        }
-
-        // Check if explanation is missing and fetch it
-        if (!currentQuestion.explanation_it) {
-            try {
-                const { data, error } = await supabase.functions.invoke('generate-explanation', {
-                    body: { question_id: currentQuestion.id, target_lang: 'it' }
-                });
-
-                if (!error && data?.explanation) {
-                    // Update local state (hacky but works for immediate feedback)
-                    currentQuestion.explanation_it = data.explanation;
-                    // Force re-render
-                    setSelectedOption(selectedOption);
-                }
-            } catch (err) {
-                console.error('Failed to generate explanation:', err);
-            }
         }
     };
 
