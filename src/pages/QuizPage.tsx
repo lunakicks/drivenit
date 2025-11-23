@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { QuizHeader } from '../components/quiz/QuizHeader';
 import { FlashCard } from '../components/quiz/FlashCard';
 import { ExplanationView } from '../components/quiz/ExplanationView';
+import { CompletionModal } from '../components/quiz/CompletionModal';
 import { PageTransition } from '../components/layout/PageTransition';
 
 import clsx from 'clsx';
@@ -21,7 +22,8 @@ export const QuizPage: React.FC = () => {
         startQuiz,
         answerQuestion,
         nextQuestion,
-        isComplete
+        isComplete,
+        correctAnswers
     } = useQuizStore();
 
     const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak, recordWrongAnswer } = useAuthStore();
@@ -29,6 +31,7 @@ export const QuizPage: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isChecked, setIsChecked] = useState(false);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+    const [showCompletionModal, setShowCompletionModal] = useState(false);
 
     // Translation State
     const [translated, setTranslated] = useState(false);
@@ -67,9 +70,9 @@ export const QuizPage: React.FC = () => {
         if (isComplete && categoryId) {
             // Mark category as complete
             useAuthStore.getState().completeCategory(categoryId);
-            navigate('/'); // Or navigate to a "Lesson Complete" summary page
+            setShowCompletionModal(true);
         }
-    }, [isComplete, categoryId, navigate]);
+    }, [isComplete, categoryId]);
 
     // Reset translation when question changes
     useEffect(() => {
@@ -204,6 +207,15 @@ export const QuizPage: React.FC = () => {
                     })()
                 )}
             </div>
+
+            {showCompletionModal && (
+                <CompletionModal
+                    xpEarned={correctAnswers * 10}
+                    correctAnswers={correctAnswers}
+                    totalQuestions={questions.length}
+                    onHome={() => navigate('/')}
+                />
+            )}
         </PageTransition>
     );
 };
