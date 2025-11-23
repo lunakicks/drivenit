@@ -8,13 +8,17 @@ interface CompletionModalProps {
     correctAnswers: number;
     totalQuestions: number;
     onHome: () => void;
+    title?: string;
+    message?: string;
 }
 
 export const CompletionModal: React.FC<CompletionModalProps> = ({
     xpEarned,
     correctAnswers,
     totalQuestions,
-    onHome
+    onHome,
+    title = "Section Complete!",
+    message
 }) => {
     const accuracy = Math.round((correctAnswers / totalQuestions) * 100);
 
@@ -35,8 +39,13 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                     >
                         <Trophy size={64} className="text-white mb-4 drop-shadow-md" />
                         <h2 className="text-3xl font-extrabold text-white tracking-wide uppercase drop-shadow-sm">
-                            Section Complete!
+                            {title}
                         </h2>
+                        {message && (
+                            <p className="text-white/90 font-medium mt-2 text-lg">
+                                {message}
+                            </p>
+                        )}
                     </motion.div>
 
                     {/* Background decorations */}

@@ -6,9 +6,11 @@ import { Bookmark } from 'lucide-react';
 import { PageTransition } from '../components/layout/PageTransition';
 
 import { supabase } from '../lib/supabase';
+import { useNavigate } from 'react-router-dom';
 
 export const BookmarksPage: React.FC = () => {
     const { bookmarks } = useAuthStore();
+    const navigate = useNavigate();
     const [savedQuestions, setSavedQuestions] = useState<Question[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -67,7 +69,12 @@ export const BookmarksPage: React.FC = () => {
                                 <p className="font-bold text-eel-grey mb-2">{q.question_text_it}</p>
                                 <div className="flex justify-between items-center mt-2">
                                     <span className="text-sm text-hare-grey font-bold uppercase">Category {q.category_id}</span>
-                                    <button className="text-feather-green font-bold text-sm uppercase">Review</button>
+                                    <button
+                                        onClick={() => navigate(`/quiz/practice/bookmarks?startId=${q.id}`)}
+                                        className="text-feather-green font-bold text-sm uppercase hover:underline"
+                                    >
+                                        Review
+                                    </button>
                                 </div>
                             </div>
                         ))}

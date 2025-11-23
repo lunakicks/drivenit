@@ -82,12 +82,22 @@ export const QuizPage: React.FC = () => {
                 if (error) throw error;
 
                 if (data) {
-                    // Map DB questions to frontend Question type if needed
                     const mappedQuestions = data.map((q: any) => ({
                         ...q,
                         options_it: typeof q.options_it === 'string' ? JSON.parse(q.options_it) : q.options_it
                     }));
-                    startQuiz(mappedQuestions);
+
+                    // Check for startId in URL query params
+                    const searchParams = new URLSearchParams(window.location.search);
+                    const startId = searchParams.get('startId');
+                    let startIndex = 0;
+
+                    if (startId) {
+                        const foundIndex = mappedQuestions.findIndex((q: any) => q.id === startId);
+                        if (foundIndex !== -1) startIndex = foundIndex;
+                    }
+
+                    startQuiz(mappedQuestions, startIndex);
                 }
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -98,12 +108,29 @@ export const QuizPage: React.FC = () => {
     }, [categoryId, mode, startQuiz, wrongAnswers, bookmarks]);
 
     useEffect(() => {
-        if (isComplete && categoryId) {
-            // Mark category as complete
-            useAuthStore.getState().completeCategory(categoryId);
+        if (isComplete) {
+            if (categoryId) {
+                // Mark category as complete
+                useAuthStore.getState().completeCategory(categoryId);
+            }
             setShowCompletionModal(true);
         }
     }, [isComplete, categoryId]);
+
+    // Determine modal content based on mode
+    let modalTitle = "Section Complete!";
+    let modalMessage = "You've mastered this section.";
+
+    if (mode === 'mistakes') {
+        modalTitle = "Review Complete!";
+        modalMessage = "You've reviewed your mistakes.";
+    } else if (mode === 'bookmarks') {
+        modalTitle = "Saved Questions Reviewed!";
+        modalMessage = "Great job reviewing your saved questions.";
+    } else if (mode === 'test') {
+        modalTitle = "Test Completed!";
+        modalMessage = "You've finished the simulation.";
+    }
 
     // Reset translation when question changes
     useEffect(() => {
@@ -252,6 +279,8 @@ export const QuizPage: React.FC = () => {
                     correctAnswers={correctAnswers}
                     totalQuestions={questions.length}
                     onHome={() => navigate('/')}
+                    title={modalTitle}
+                    message={modalMessage}
                 />
             )}
         </PageTransition>

@@ -9,7 +9,7 @@ interface QuizState {
     isComplete: boolean;
 
     // Actions
-    startQuiz: (questions: Question[]) => void;
+    startQuiz: (questions: Question[], startIndex?: number) => void;
     answerQuestion: (isCorrect: boolean) => void;
     nextQuestion: () => void;
     resetQuiz: () => void;
@@ -23,10 +23,10 @@ export const useQuizStore = create<QuizState>((set, get) => ({
     wrongAnswers: 0,
     isComplete: false,
 
-    startQuiz: (questions) => {
+    startQuiz: (questions, startIndex = 0) => {
         set({
             questions,
-            currentQuestionIndex: 0,
+            currentQuestionIndex: startIndex,
             correctAnswers: 0,
             wrongAnswers: 0,
             isComplete: false,
