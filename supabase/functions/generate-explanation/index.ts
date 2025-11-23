@@ -58,10 +58,12 @@ serve(async (req) => {
         const prompt = `
       You are an expert driving instructor. The student answered the following question about Italian road rules.
       
-      Question: "${question.question_text_it}"
-      Options: ${JSON.stringify(question.options_it)}
-      Correct Answer Index: ${question.correct_option_index} (0-based)
+      Context:
+      - Question: "${question.question_text_it}"
+      - Options: ${JSON.stringify(question.options_it)}
+      - Correct Answer Index: ${question.correct_option_index} (0-based)
       
+      Task:
       Please provide a clear, helpful, and meaningful explanation of WHY this is the correct answer. 
       Explain the specific road rule or sign meaning involved.
       
@@ -79,7 +81,7 @@ serve(async (req) => {
                 'X-Title': 'Patente Learning App'
             },
             body: JSON.stringify({
-                model: 'openai/gpt-oss-20b:free', // Align with translate-content
+                model: 'google/gemini-2.0-flash-lite-preview-02-05:free',
                 messages: [{ role: 'user', content: prompt }]
             })
         })

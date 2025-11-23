@@ -168,10 +168,10 @@ export const QuizPage: React.FC = () => {
                 {/* Explanation View (After Checking) */}
                 {isChecked && isCorrect !== null && (
                     (() => {
-                        const explanationText = translated && translation
+                        const explanationText = (translated && translation?.explanation)
                             ? translation.explanation
                             : (currentQuestion.explanation_it || "Loading explanation...");
-                        console.log('Rendering ExplanationView. Translated:', translated, 'Translation:', translation, 'Explanation Text:', explanationText);
+
                         return (
                             <ExplanationView
                                 isCorrect={isCorrect}

@@ -52,16 +52,21 @@ serve(async (req) => {
         const prompt = `
       You are a professional translator. Translate the following driving test question from Italian to ${target_lang === 'en' ? 'English' : target_lang}.
       
-      Question: "${question.question_text_it}"
-      Options: ${JSON.stringify(question.options_it)}
-      Explanation: "${question.explanation_it || 'Not provided. Please generate a brief explanation for the correct answer.'}"
-      Correct Answer Index: ${question.correct_option_index}
+      Context:
+      - Question: "${question.question_text_it}"
+      - Options: ${JSON.stringify(question.options_it)}
+      - Explanation (Italian): "${question.explanation_it || ''}"
+      - Correct Answer Index: ${question.correct_option_index}
       
-      Return ONLY a JSON object with the following structure:
+      Task:
+      1. Translate the Question and Options.
+      2. Translate the Explanation. IF the Italian explanation is empty or missing, you MUST generate a helpful explanation for why the correct answer is right.
+      
+      Return ONLY a valid JSON object with this exact structure:
       {
         "question_text": "Translated question text",
         "options": ["Translated Option 1", "Translated Option 2"],
-        "explanation": "Translated explanation (or generated if original was missing)"
+        "explanation": "Translated or generated explanation here"
       }
     `
 
@@ -75,7 +80,7 @@ serve(async (req) => {
                 'X-Title': 'Patente Learning App'
             },
             body: JSON.stringify({
-                model: 'openai/gpt-oss-20b:free', // Using the requested free model
+                model: 'google/gemini-2.0-flash-lite-preview-02-05:free',
                 messages: [{ role: 'user', content: prompt }]
             })
         })
