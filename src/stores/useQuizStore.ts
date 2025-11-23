@@ -13,6 +13,7 @@ interface QuizState {
     answerQuestion: (isCorrect: boolean) => void;
     nextQuestion: () => void;
     resetQuiz: () => void;
+    updateQuestion: (id: string, updates: Partial<Question>) => void;
 }
 
 export const useQuizStore = create<QuizState>((set, get) => ({
@@ -56,5 +57,13 @@ export const useQuizStore = create<QuizState>((set, get) => ({
             wrongAnswers: 0,
             isComplete: false,
         });
+    },
+
+    updateQuestion: (id: string, updates: Partial<Question>) => {
+        set((state) => ({
+            questions: state.questions.map((q) =>
+                q.id === id ? { ...q, ...updates } : q
+            )
+        }));
     },
 }));

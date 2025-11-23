@@ -39,10 +39,23 @@ export const translateQuestion = async (questionId: string, targetLang: string):
         }
 
         if (funcData) {
+            // Sanitize data to ensure no objects are passed to React children
+            const safeExplanation = typeof funcData.explanation === 'object'
+                ? JSON.stringify(funcData.explanation)
+                : String(funcData.explanation || '');
+
+            const safeOptions = Array.isArray(funcData.options)
+                ? funcData.options.map((opt: any) => typeof opt === 'object' ? JSON.stringify(opt) : String(opt))
+                : [];
+
+            const safeQuestion = typeof funcData.question_text === 'object'
+                ? JSON.stringify(funcData.question_text)
+                : String(funcData.question_text || '');
+
             return {
-                question_text: funcData.question_text,
-                explanation: funcData.explanation,
-                options: funcData.options
+                question_text: safeQuestion,
+                explanation: safeExplanation,
+                options: safeOptions
             };
         }
 

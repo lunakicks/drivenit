@@ -95,11 +95,17 @@ export const QuizPage: React.FC = () => {
                         body: { question_id: currentQuestion.id, target_lang: 'it' }
                     });
 
-                    if (!error && data?.explanation) {
-                        currentQuestion.explanation_it = data.explanation;
+                    if (error) {
+                        console.error('Edge Function Error:', error);
+                    } else if (data?.explanation) {
+                        // Use store action to update state and trigger re-render
+                        useQuizStore.getState().updateQuestion(currentQuestion.id, { explanation_it: data.explanation });
                     }
-                } catch (err) {
+                } catch (err: any) {
                     console.error('Failed to pre-fetch explanation:', err);
+                    if (err.message?.includes('401')) {
+                        console.error('⚠️ 401 Unauthorized: This usually means the VITE_SUPABASE_ANON_KEY is missing or invalid.');
+                    }
                 }
             }
 

@@ -81,7 +81,7 @@ serve(async (req) => {
                 'X-Title': 'Patente Learning App'
             },
             body: JSON.stringify({
-                model: 'google/gemini-2.0-flash-lite-preview-02-05:free',
+                model: 'gopenai/gpt-oss-20b:free',
                 messages: [{ role: 'user', content: prompt }]
             })
         })
