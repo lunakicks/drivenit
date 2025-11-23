@@ -14,7 +14,7 @@ import clsx from 'clsx';
 
 
 export const QuizPage: React.FC = () => {
-    const { categoryId } = useParams();
+    const { categoryId, mode } = useParams();
     const navigate = useNavigate();
     const {
         questions,
@@ -26,7 +26,7 @@ export const QuizPage: React.FC = () => {
         correctAnswers
     } = useQuizStore();
 
-    const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak, recordWrongAnswer } = useAuthStore();
+    const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak, recordWrongAnswer, wrongAnswers } = useAuthStore();
 
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isChecked, setIsChecked] = useState(false);
@@ -39,19 +39,50 @@ export const QuizPage: React.FC = () => {
 
     useEffect(() => {
         const fetchQuestions = async () => {
-            if (!categoryId) return;
+            let query = supabase.from('questions').select('*');
+
+            if (categoryId) {
+                query = query.eq('category_id', categoryId);
+            } else if (mode === 'mistakes') {
+                if (wrongAnswers.length === 0) {
+                    // Handle empty state or redirect
+                    return;
+                }
+                query = query.in('id', wrongAnswers);
+            } else if (mode === 'bookmarks') {
+                if (bookmarks.length === 0) {
+                    return;
+                }
+                query = query.in('id', bookmarks);
+            } else if (mode === 'test') {
+                // Use RPC to get random questions
+                try {
+                    const { data, error } = await supabase.rpc('get_random_questions', { limit_count: 30 });
+                    if (error) throw error;
+
+                    if (data) {
+                        const mappedQuestions = data.map((q: any) => ({
+                            ...q,
+                            options_it: typeof q.options_it === 'string' ? JSON.parse(q.options_it) : q.options_it
+                        }));
+                        startQuiz(mappedQuestions);
+                    }
+                    return; // Exit early as we handled data fetching
+                } catch (error) {
+                    console.error('Error fetching random questions:', error);
+                    return;
+                }
+            } else {
+                return; // Invalid state
+            }
 
             try {
-                const { data, error } = await supabase
-                    .from('questions')
-                    .select('*')
-                    .eq('category_id', categoryId);
+                const { data, error } = await query;
 
                 if (error) throw error;
 
                 if (data) {
                     // Map DB questions to frontend Question type if needed
-                    // Currently the schema matches well, but we might need to parse options if they are JSON
                     const mappedQuestions = data.map((q: any) => ({
                         ...q,
                         options_it: typeof q.options_it === 'string' ? JSON.parse(q.options_it) : q.options_it
@@ -64,7 +95,7 @@ export const QuizPage: React.FC = () => {
         };
 
         fetchQuestions();
-    }, [categoryId, startQuiz]);
+    }, [categoryId, mode, startQuiz, wrongAnswers, bookmarks]);
 
     useEffect(() => {
         if (isComplete && categoryId) {
@@ -178,6 +209,7 @@ export const QuizPage: React.FC = () => {
                     setTranslated={setTranslated}
                     translation={translation}
                     setTranslation={setTranslation}
+                    disableTranslation={mode === 'test'}
                 />
 
                 {/* Bottom Action Bar (Before Checking) */}

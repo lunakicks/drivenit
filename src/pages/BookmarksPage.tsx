@@ -5,7 +5,7 @@ import type { Question } from '../types';
 import { Bookmark } from 'lucide-react';
 import { PageTransition } from '../components/layout/PageTransition';
 
-import { MOCK_QUESTIONS } from '../data/questions';
+import { supabase } from '../lib/supabase';
 
 export const BookmarksPage: React.FC = () => {
     const { bookmarks } = useAuthStore();
@@ -20,13 +20,26 @@ export const BookmarksPage: React.FC = () => {
                 return;
             }
 
-            // Filter mock questions that are in the bookmarks array
-            // In a real app with full DB seeding, we would fetch from Supabase
-            // const { data } = await supabase.from('questions').select('*').in('id', bookmarks);
+            try {
+                const { data, error } = await supabase
+                    .from('questions')
+                    .select('*')
+                    .in('id', bookmarks);
 
-            const foundQuestions = MOCK_QUESTIONS.filter(q => bookmarks.includes(q.id));
-            setSavedQuestions(foundQuestions);
-            setLoading(false);
+                if (error) throw error;
+
+                if (data) {
+                    const mappedQuestions = data.map((q: any) => ({
+                        ...q,
+                        options_it: typeof q.options_it === 'string' ? JSON.parse(q.options_it) : q.options_it
+                    }));
+                    setSavedQuestions(mappedQuestions);
+                }
+            } catch (error) {
+                console.error('Error fetching bookmarks:', error);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchBookmarks();

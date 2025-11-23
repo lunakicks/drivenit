@@ -18,6 +18,7 @@ interface FlashCardProps {
     setTranslated: (value: boolean) => void;
     translation: { q: string, explanation: string, opts: string[] } | null;
     setTranslation: (value: { q: string, explanation: string, opts: string[] } | null) => void;
+    disableTranslation?: boolean;
 }
 
 export const FlashCard: React.FC<FlashCardProps> = ({
@@ -32,7 +33,8 @@ export const FlashCard: React.FC<FlashCardProps> = ({
     translated,
     setTranslated,
     translation,
-    setTranslation
+    setTranslation,
+    disableTranslation = false
 }) => {
     const handleTranslate = async () => {
         if (translated) {
@@ -77,15 +79,17 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                     </div>
 
                     <div className="flex gap-2 mt-2">
-                        <button
-                            onClick={handleTranslate}
-                            className={clsx(
-                                "transition-colors text-sm font-bold uppercase tracking-wide flex items-center gap-1",
-                                translated ? "text-feather-green" : "text-hare-grey hover:text-sky-blue"
-                            )}
-                        >
-                            <Languages size={16} /> {translated ? 'Original' : 'Translate'}
-                        </button>
+                        {!disableTranslation && (
+                            <button
+                                onClick={handleTranslate}
+                                className={clsx(
+                                    "transition-colors text-sm font-bold uppercase tracking-wide flex items-center gap-1",
+                                    translated ? "text-feather-green" : "text-hare-grey hover:text-sky-blue"
+                                )}
+                            >
+                                <Languages size={16} /> {translated ? 'Original' : 'Translate'}
+                            </button>
+                        )}
                         <button
                             onClick={onFlag}
                             className={clsx(

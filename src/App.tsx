@@ -35,6 +35,12 @@ const AppRoutes = () => {
           </ProtectedRoute>
         } />
 
+        <Route path="/quiz/practice/:mode" element={
+          <ProtectedRoute>
+            <QuizPage />
+          </ProtectedRoute>
+        } />
+
         <Route path="/practice" element={
           <ProtectedRoute>
             <MobileLayout>
