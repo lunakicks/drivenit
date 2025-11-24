@@ -1,19 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { User, Heart, Flame, LogOut } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { PageTransition } from '../components/layout/PageTransition';
+import { InfoModal } from '../components/ui/InfoModal';
 
 export const ProfilePage: React.FC = () => {
     const { user, signOut } = useAuthStore();
+    const [activeModal, setActiveModal] = useState<'streak' | 'xp' | 'league' | null>(null);
 
     if (!user) return null;
 
     const stats = [
-        { icon: <Flame className="text-orange-500" size={24} />, label: 'Day Streak', value: (user as any).streak || 0 },
-        { icon: <Heart className="text-red-500" size={24} />, label: 'Total XP', value: (user as any).xp || 0 },
-        { icon: <User className="text-blue-500" size={24} />, label: 'League', value: 'Bronze' },
+        {
+            id: 'streak',
+            icon: <Flame className="text-orange-500" size={24} />,
+            label: 'Day Streak',
+            value: (user as any).streak || 0,
+            modalTitle: "Day Streak",
+            modalDesc: "Keep your streak alive by practicing every day! If you miss a day, your streak resets to zero."
+        },
+        {
+            id: 'xp',
+            icon: <Heart className="text-red-500" size={24} />,
+            label: 'Total XP',
+            value: (user as any).xp || 0,
+            modalTitle: "Total XP",
+            modalDesc: "Earn XP by answering questions correctly. You get 10 XP for every correct answer!"
+        },
+        {
+            id: 'league',
+            icon: <User className="text-blue-500" size={24} />,
+            label: 'League',
+            value: 'Bronze',
+            modalTitle: "Bronze League",
+            modalDesc: "You are currently in the Bronze League. Keep earning XP to promote to Silver and unlock new rewards!"
+        },
     ];
+
+    const activeStat = stats.find(s => s.id === activeModal);
 
     return (
         <PageTransition>
@@ -31,14 +56,26 @@ export const ProfilePage: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                    {stats.map((stat, index) => (
-                        <div key={index} className="bg-white border-2 border-card-border rounded-xl p-4 flex flex-col items-center gap-2">
+                    {stats.map((stat) => (
+                        <button
+                            key={stat.id}
+                            onClick={() => setActiveModal(stat.id as any)}
+                            className="bg-white border-2 border-card-border rounded-xl p-4 flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors active:scale-95"
+                        >
                             {stat.icon}
                             <span className="text-2xl font-bold text-eel-grey">{stat.value}</span>
                             <span className="text-sm text-hare-grey font-bold uppercase">{stat.label}</span>
-                        </div>
+                        </button>
                     ))}
                 </div>
+
+                <InfoModal
+                    isOpen={!!activeModal}
+                    onClose={() => setActiveModal(null)}
+                    title={activeStat?.modalTitle || ''}
+                    description={activeStat?.modalDesc || ''}
+                    icon={activeStat?.icon}
+                />
 
                 <button
                     onClick={() => {
