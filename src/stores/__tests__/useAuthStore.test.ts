@@ -1,12 +1,17 @@
 import { act } from '@testing-library/react';
 import { useAuthStore } from '../useAuthStore';
-import { createSupabaseMock } from '../../test/supabaseMock';
+
 
 // Mock the supabase client module
-const mockSupabase = createSupabaseMock();
-jest.mock('../../lib/supabase', () => ({
-    supabase: mockSupabase
-}));
+jest.mock('../../lib/supabase', () => {
+    const { createSupabaseMock } = require('../../test/supabaseMock');
+    return {
+        supabase: createSupabaseMock()
+    };
+});
+
+import { supabase } from '../../lib/supabase';
+const mockSupabase = supabase as any;
 
 describe('useAuthStore', () => {
     beforeEach(() => {
@@ -51,11 +56,7 @@ describe('useAuthStore', () => {
 
             // Mock other data fetches (bookmarks, flags, progress) - simplified for this test
             // We need to ensure the chain works for multiple calls
-            const mockChain = {
-                select: jest.fn().mockReturnThis(),
-                eq: jest.fn().mockReturnThis(),
-                single: jest.fn().mockResolvedValue({ data: mockProfile })
-            };
+
             // Override the default mock for this specific test flow if needed, 
             // but our generic mock might need adjustment to handle different returns for different tables.
             // Let's refine the mock strategy in the test body for granular control.
@@ -68,6 +69,9 @@ describe('useAuthStore', () => {
                             eq: () => ({
                                 single: () => Promise.resolve({ data: mockProfile })
                             })
+                        }),
+                        update: jest.fn().mockReturnValue({
+                            eq: jest.fn().mockResolvedValue({ error: null })
                         })
                     };
                 }

@@ -89,7 +89,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                         </button>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="p-6 space-y-4">
+                    <form onSubmit={handleSubmit} className="p-6 space-y-4" noValidate>
                         {submitError && (
                             <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg font-medium">
                                 {submitError}

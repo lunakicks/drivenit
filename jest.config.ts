@@ -8,7 +8,7 @@ export default {
     },
     transform: {
         '^.+\\.tsx?$': ['ts-jest', {
-            tsconfig: 'tsconfig.app.json'
+            tsconfig: 'tsconfig.test.json'
         }],
     },
 };
