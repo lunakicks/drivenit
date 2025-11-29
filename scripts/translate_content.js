@@ -21,20 +21,18 @@ if (!OPENROUTER_API_KEY) {
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
+// Parse command line arguments for verbose mode
+const VERBOSE = process.argv.includes('--verbose') || process.argv.includes('-v');
+
 // Rate limiting: 10 requests per minute = 6000ms between requests
 const RATE_LIMIT_DELAY = 6000;
 const TARGET_LANGUAGE = 'en'; // English
+const PROGRESS_INTERVAL = 5; // Log every N questions in non-verbose mode
 
-/**
- * Delay function for rate limiting
- */
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/**
- * Call OpenRouter API to translate text
- */
 async function translateText(text, fromLang = 'it', toLang = 'en') {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
@@ -45,7 +43,7 @@ async function translateText(text, fromLang = 'it', toLang = 'en') {
             'X-Title': 'Quiz Translation Service'
         },
         body: JSON.stringify({
-            model: 'meta-llama/llama-3.1-8b-instruct:free', // Free model, you can change this
+            model: 'google/gemini-2.0-flash-lite-preview-02-05:free',
             messages: [
                 {
                     role: 'system',
@@ -68,13 +66,9 @@ async function translateText(text, fromLang = 'it', toLang = 'en') {
     return data.choices[0].message.content.trim();
 }
 
-/**
- * Translate all categories
- */
 async function translateCategories() {
     console.log('\n📚 Translating Categories...\n');
 
-    // Fetch categories that don't have English translations
     const { data: categories, error } = await supabase
         .from('categories')
         .select('id, slug, title_it, title_en')
@@ -97,11 +91,12 @@ async function translateCategories() {
 
     for (const category of categories) {
         try {
-            console.log(`🔄 Translating: "${category.title_it}"...`);
+            if (VERBOSE) {
+                console.log(`🔄 Translating: "${category.title_it}"...`);
+            }
 
             const translatedTitle = await translateText(category.title_it);
 
-            // Update the category
             const { error: updateError } = await supabase
                 .from('categories')
                 .update({ title_en: translatedTitle })
@@ -111,33 +106,34 @@ async function translateCategories() {
                 console.error(`   ❌ Failed to update: ${updateError.message}`);
                 failed++;
             } else {
-                console.log(`   ✅ "${translatedTitle}"`);
+                if (VERBOSE) {
+                    console.log(`   ✅ "${translatedTitle}"`);
+                }
                 translated++;
             }
 
-            // Rate limiting delay
             await delay(RATE_LIMIT_DELAY);
 
         } catch (error) {
             console.error(`   ❌ Translation error: ${error.message}`);
             failed++;
         }
+
+        if (!VERBOSE && translated % PROGRESS_INTERVAL === 0) {
+            console.log(`📊 Progress: ${translated}/${categories.length} categories translated`);
+        }
     }
 
     console.log(`\n📊 Categories Summary: ${translated} translated, ${failed} failed\n`);
 }
 
-/**
- * Translate all questions
- */
 async function translateQuestions() {
     console.log('\n📝 Translating Questions...\n');
 
-    // Fetch questions without English translations
     const { data: questions, error } = await supabase
         .from('questions')
         .select('id, question_text_it, explanation_it, options_it')
-        .limit(500); // Process in batches if you have many questions
+        .limit(500);
 
     if (error) {
         console.error('❌ Error fetching questions:', error.message);
@@ -149,7 +145,6 @@ async function translateQuestions() {
         return;
     }
 
-    // Filter out questions that already have translations
     const questionsToTranslate = [];
     for (const question of questions) {
         const { data: existingTranslation } = await supabase
@@ -178,32 +173,36 @@ async function translateQuestions() {
         const question = questionsToTranslate[i];
 
         try {
-            console.log(`🔄 [${i + 1}/${questionsToTranslate.length}] Translating question...`);
+            if (VERBOSE) {
+                console.log(`🔄 [${i + 1}/${questionsToTranslate.length}] Translating question...`);
+            }
 
-            // Translate question text
             const translatedQuestion = await translateText(question.question_text_it);
-            console.log(`   ✅ Question translated`);
+            if (VERBOSE) {
+                console.log(`   ✅ Question translated`);
+            }
 
             await delay(RATE_LIMIT_DELAY);
 
-            // Translate options (array of strings like ["Vero", "Falso"])
             const translatedOptions = [];
             for (const option of question.options_it) {
                 const translatedOption = await translateText(option);
                 translatedOptions.push(translatedOption);
                 await delay(RATE_LIMIT_DELAY);
             }
-            console.log(`   ✅ Options translated: [${translatedOptions.join(', ')}]`);
+            if (VERBOSE) {
+                console.log(`   ✅ Options translated: [${translatedOptions.join(', ')}]`);
+            }
 
-            // Translate explanation if it exists
             let translatedExplanation = null;
             if (question.explanation_it) {
                 translatedExplanation = await translateText(question.explanation_it);
-                console.log(`   ✅ Explanation translated`);
+                if (VERBOSE) {
+                    console.log(`   ✅ Explanation translated`);
+                }
                 await delay(RATE_LIMIT_DELAY);
             }
 
-            // Insert translation into translations table
             const { error: insertError } = await supabase
                 .from('translations')
                 .insert({
@@ -218,7 +217,9 @@ async function translateQuestions() {
                 console.error(`   ❌ Failed to save translation: ${insertError.message}`);
                 failed++;
             } else {
-                console.log(`   💾 Saved to database\n`);
+                if (VERBOSE) {
+                    console.log(`   💾 Saved to database\n`);
+                }
                 translated++;
             }
 
@@ -226,27 +227,26 @@ async function translateQuestions() {
             console.error(`   ❌ Error: ${error.message}\n`);
             failed++;
         }
+
+        if (!VERBOSE && (translated % PROGRESS_INTERVAL === 0 || translated === questionsToTranslate.length)) {
+            console.log(`📊 Progress: ${translated}/${questionsToTranslate.length} questions translated`);
+        }
     }
 
     console.log(`\n📊 Questions Summary: ${translated} translated, ${failed} failed\n`);
 }
 
-/**
- * Main translation function
- */
 async function runTranslations() {
     console.log('🌍 Starting Translation Service\n');
     console.log(`📋 Configuration:`);
     console.log(`   - Source Language: Italian (it)`);
     console.log(`   - Target Language: English (${TARGET_LANGUAGE})`);
     console.log(`   - Rate Limit: 10 requests/minute (${RATE_LIMIT_DELAY}ms delay)`);
-    console.log(`   - Model: meta-llama/llama-3.1-8b-instruct:free\n`);
+    console.log(`   - Model: meta-llama/llama-3.1-8b-instruct:free`);
+    console.log(`   - Verbose Mode: ${VERBOSE ? 'ON (show every item)' : `OFF (show progress every ${PROGRESS_INTERVAL} items)`}\n`);
 
     try {
-        // Translate categories first (smaller dataset)
         await translateCategories();
-
-        // Then translate questions
         await translateQuestions();
 
         console.log('\n✅ Translation process completed!');
@@ -256,5 +256,4 @@ async function runTranslations() {
     }
 }
 
-// Run the script
 runTranslations();
