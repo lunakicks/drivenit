@@ -15,8 +15,16 @@ OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxx
 
 ### 2. Run Translation
 
+**Normal mode** (cleaner output, shows progress every 5 items):
 ```bash
 node scripts/translate_content.js
+```
+
+**Verbose mode** (shows details for every item):
+```bash
+node scripts/translate_content.js --verbose
+# or
+node scripts/translate_content.js -v
 ```
 
 ## What It Does

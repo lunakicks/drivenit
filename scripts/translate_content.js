@@ -43,7 +43,7 @@ async function translateText(text, fromLang = 'it', toLang = 'en') {
             'X-Title': 'Quiz Translation Service'
         },
         body: JSON.stringify({
-            model: 'google/gemini-2.0-flash-lite-preview-02-05:free',
+            model: 'openai/gpt-oss-20b:free',
             messages: [
                 {
                     role: 'system',
