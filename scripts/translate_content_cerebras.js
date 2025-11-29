@@ -33,7 +33,9 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function translateText(text, fromLang = 'it', toLang = 'en') {
+async function translateText(text, fromLang = 'it', toLang = 'en', overrideSystemPrompt = null) {
+    const systemContent = overrideSystemPrompt || `You are a professional translator. Translate the following text from ${fromLang === 'it' ? 'Italian' : fromLang} to ${toLang === 'en' ? 'English' : toLang}. Provide ONLY the translation, no explanations or additional text.`;
+
     const response = await fetch('https://api.cerebras.ai/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -47,7 +49,7 @@ async function translateText(text, fromLang = 'it', toLang = 'en') {
             messages: [
                 {
                     role: 'system',
-                    content: `You are a professional translator. Translate the following text from ${fromLang === 'it' ? 'Italian' : fromLang} to ${toLang === 'en' ? 'English' : toLang}. Provide ONLY the translation, no explanations or additional text.`
+                    content: systemContent
                 },
                 {
                     role: 'user',
@@ -187,9 +189,9 @@ async function translateQuestions() {
                 }
 
                 const correctAnswer = question.options_it[question.correct_option_index];
-                const prompt = `Explain why the answer "${correctAnswer}" is correct for the question: "${question.question_text_it}". The explanation should be concise and in Italian. Provide ONLY the explanation.`;
+                const prompt = `You are an experienced italian driving instructor. Answer why the answer "${correctAnswer}" is correct for the question: "${question.question_text_it}". The explanation should be concise and in Italian.`;
 
-                const generatedExplanation = await translateText(prompt, 'it', 'it'); // Using translateText as a generic completion function
+                const generatedExplanation = await translateText(prompt, 'it', 'it', 'You are a helpful AI assistant.');
 
                 // Update question in DB
                 const { error: updateError } = await supabase
@@ -211,14 +213,34 @@ async function translateQuestions() {
             // 2. Check if translation exists again (in case we only needed to generate explanation)
             const { data: existingTranslation } = await supabase
                 .from('translations')
-                .select('id')
+                .select('id, explanation')
                 .eq('question_id', question.id)
                 .eq('language_code', TARGET_LANGUAGE)
                 .single();
 
             if (existingTranslation) {
-                if (VERBOSE) {
-                    console.log(`   ✅ Translation already exists, skipping translation step.`);
+                // If translation exists but is missing the explanation, and we have one now
+                if (!existingTranslation.explanation && question.explanation_it) {
+                    if (VERBOSE) {
+                        console.log(`   ✨ Translating and updating missing explanation...`);
+                    }
+                    const translatedExplanation = await translateText(question.explanation_it);
+
+                    const { error: updateError } = await supabase
+                        .from('translations')
+                        .update({ explanation: translatedExplanation })
+                        .eq('id', existingTranslation.id);
+
+                    if (updateError) {
+                        console.error(`   ❌ Failed to update translation with explanation: ${updateError.message}`);
+                    } else if (VERBOSE) {
+                        console.log(`   ✅ Translation updated with explanation`);
+                    }
+                    await delay(RATE_LIMIT_DELAY);
+                } else {
+                    if (VERBOSE) {
+                        console.log(`   ✅ Translation already exists, skipping.`);
+                    }
                 }
                 continue;
             }
