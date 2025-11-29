@@ -35,12 +35,17 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function translateText(text, fromLang = 'it', toLang = 'en') {
+async function translateText(text, fromLang = 'it', toLang = 'en', overrideSystemPrompt = null) {
     const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
 
-    const prompt = `Translate the following text from ${fromLang === 'it' ? 'Italian' : fromLang} to ${toLang === 'en' ? 'English' : toLang}. Provide ONLY the translation, no explanations or additional text.
+    let prompt;
+    if (overrideSystemPrompt) {
+        prompt = `${overrideSystemPrompt}\n\n${text}`;
+    } else {
+        prompt = `Translate the following text from ${fromLang === 'it' ? 'Italian' : fromLang} to ${toLang === 'en' ? 'English' : toLang}. Provide ONLY the translation, no explanations or additional text.
 
 Text to translate: ${text}`;
+    }
 
     const result = await model.generateContent(prompt);
     const response = result.response;
@@ -113,7 +118,7 @@ async function translateQuestions() {
 
     const { data: questions, error } = await supabase
         .from('questions')
-        .select('id, question_text_it, explanation_it, options_it')
+        .select('id, question_text_it, explanation_it, options_it, correct_option_index')
         .limit(500);
 
     if (error) {
@@ -130,22 +135,24 @@ async function translateQuestions() {
     for (const question of questions) {
         const { data: existingTranslation } = await supabase
             .from('translations')
-            .select('id')
+            .select('id, explanation')
             .eq('question_id', question.id)
             .eq('language_code', TARGET_LANGUAGE)
             .single();
 
-        if (!existingTranslation) {
+        // We process if translation is missing OR if explanation_it is missing (to generate it)
+        // OR if translation exists but is missing the explanation
+        if (!existingTranslation || !question.explanation_it || (!existingTranslation.explanation && question.explanation_it)) {
             questionsToTranslate.push(question);
         }
     }
 
     if (questionsToTranslate.length === 0) {
-        console.log('✅ All questions already translated!');
+        console.log('✅ All questions already translated and have explanations!');
         return;
     }
 
-    console.log(`Found ${questionsToTranslate.length} questions to translate\n`);
+    console.log(`Found ${questionsToTranslate.length} questions to process\n`);
 
     let translated = 0;
     let failed = 0;
@@ -155,9 +162,73 @@ async function translateQuestions() {
 
         try {
             if (VERBOSE) {
-                console.log(`🔄 [${i + 1}/${questionsToTranslate.length}] Translating question...`);
+                console.log(`🔄 [${i + 1}/${questionsToTranslate.length}] Processing question...`);
             }
 
+            // 1. Generate Explanation if missing
+            if (!question.explanation_it) {
+                if (VERBOSE) {
+                    console.log(`   ✨ Generating explanation...`);
+                }
+
+                const correctAnswer = question.options_it[question.correct_option_index];
+                const prompt = `You are an experienced italian driving instructor. Answer why the answer "${correctAnswer}" is correct for the question: "${question.question_text_it}". The explanation should be concise and in Italian.`;
+
+                const generatedExplanation = await translateText(prompt, 'it', 'it', 'You are a helpful AI assistant.');
+
+                // Update question in DB
+                const { error: updateError } = await supabase
+                    .from('questions')
+                    .update({ explanation_it: generatedExplanation })
+                    .eq('id', question.id);
+
+                if (updateError) {
+                    console.error(`   ❌ Failed to save generated explanation: ${updateError.message}`);
+                } else {
+                    question.explanation_it = generatedExplanation; // Update local object
+                    if (VERBOSE) {
+                        console.log(`   ✅ Explanation generated and saved`);
+                    }
+                }
+                await delay(RATE_LIMIT_DELAY);
+            }
+
+            // 2. Check if translation exists again (in case we only needed to generate explanation)
+            const { data: existingTranslation } = await supabase
+                .from('translations')
+                .select('id, explanation')
+                .eq('question_id', question.id)
+                .eq('language_code', TARGET_LANGUAGE)
+                .single();
+
+            if (existingTranslation) {
+                // If translation exists but is missing the explanation, and we have one now
+                if (!existingTranslation.explanation && question.explanation_it) {
+                    if (VERBOSE) {
+                        console.log(`   ✨ Translating and updating missing explanation...`);
+                    }
+                    const translatedExplanation = await translateText(question.explanation_it);
+
+                    const { error: updateError } = await supabase
+                        .from('translations')
+                        .update({ explanation: translatedExplanation })
+                        .eq('id', existingTranslation.id);
+
+                    if (updateError) {
+                        console.error(`   ❌ Failed to update translation with explanation: ${updateError.message}`);
+                    } else if (VERBOSE) {
+                        console.log(`   ✅ Translation updated with explanation`);
+                    }
+                    await delay(RATE_LIMIT_DELAY);
+                } else {
+                    if (VERBOSE) {
+                        console.log(`   ✅ Translation already exists, skipping.`);
+                    }
+                }
+                continue;
+            }
+
+            // 3. Translate Content
             const translatedQuestion = await translateText(question.question_text_it);
             if (VERBOSE) {
                 console.log(`   ✅ Question translated`);
@@ -210,11 +281,11 @@ async function translateQuestions() {
         }
 
         if (!VERBOSE && (translated % PROGRESS_INTERVAL === 0 || translated === questionsToTranslate.length)) {
-            console.log(`📊 Progress: ${translated}/${questionsToTranslate.length} questions translated`);
+            console.log(`📊 Progress: ${translated}/${questionsToTranslate.length} questions processed`);
         }
     }
 
-    console.log(`\n📊 Questions Summary: ${translated} translated, ${failed} failed\n`);
+    console.log(`\n📊 Questions Summary: ${translated} processed, ${failed} failed\n`);
 }
 
 async function runTranslations() {
