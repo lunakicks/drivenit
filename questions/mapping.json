@@ -1,0 +1,47 @@
+[
+    {
+        "page_number": 1,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table1.parquet"
+    },
+    {
+        "page_number": 2,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table2.parquet"
+    },
+    {
+        "page_number": 3,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table3.parquet"
+    },
+    {
+        "page_number": 4,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table4.parquet"
+    },
+    {
+        "page_number": 5,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table5.parquet"
+    },
+    {
+        "page_number": 6,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table6.parquet"
+    },
+    {
+        "page_number": 8,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table7.parquet"
+    },
+    {
+        "page_number": 9,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table8.parquet"
+    },
+    {
+        "page_number": 10,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-1-10-table9.parquet"
+    }
+]
