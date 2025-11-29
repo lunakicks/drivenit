@@ -134,7 +134,7 @@ async function translateQuestions() {
 
     const { data: questions, error } = await supabase
         .from('questions')
-        .select('id, question_text_it, explanation_it, options_it')
+        .select('id, question_text_it, explanation_it, options_it, correct_option_index')
         .limit(500);
 
     if (error) {
@@ -156,17 +156,18 @@ async function translateQuestions() {
             .eq('language_code', TARGET_LANGUAGE)
             .single();
 
-        if (!existingTranslation) {
+        // We process if translation is missing OR if explanation_it is missing (to generate it)
+        if (!existingTranslation || !question.explanation_it) {
             questionsToTranslate.push(question);
         }
     }
 
     if (questionsToTranslate.length === 0) {
-        console.log('✅ All questions already translated!');
+        console.log('✅ All questions already translated and have explanations!');
         return;
     }
 
-    console.log(`Found ${questionsToTranslate.length} questions to translate\n`);
+    console.log(`Found ${questionsToTranslate.length} questions to process\n`);
 
     let translated = 0;
     let failed = 0;
@@ -176,9 +177,53 @@ async function translateQuestions() {
 
         try {
             if (VERBOSE) {
-                console.log(`🔄 [${i + 1}/${questionsToTranslate.length}] Translating question...`);
+                console.log(`🔄 [${i + 1}/${questionsToTranslate.length}] Processing question...`);
             }
 
+            // 1. Generate Explanation if missing
+            if (!question.explanation_it) {
+                if (VERBOSE) {
+                    console.log(`   ✨ Generating explanation...`);
+                }
+
+                const correctAnswer = question.options_it[question.correct_option_index];
+                const prompt = `Explain why the answer "${correctAnswer}" is correct for the question: "${question.question_text_it}". The explanation should be concise and in Italian. Provide ONLY the explanation.`;
+
+                const generatedExplanation = await translateText(prompt, 'it', 'it'); // Using translateText as a generic completion function
+
+                // Update question in DB
+                const { error: updateError } = await supabase
+                    .from('questions')
+                    .update({ explanation_it: generatedExplanation })
+                    .eq('id', question.id);
+
+                if (updateError) {
+                    console.error(`   ❌ Failed to save generated explanation: ${updateError.message}`);
+                } else {
+                    question.explanation_it = generatedExplanation; // Update local object
+                    if (VERBOSE) {
+                        console.log(`   ✅ Explanation generated and saved`);
+                    }
+                }
+                await delay(RATE_LIMIT_DELAY);
+            }
+
+            // 2. Check if translation exists again (in case we only needed to generate explanation)
+            const { data: existingTranslation } = await supabase
+                .from('translations')
+                .select('id')
+                .eq('question_id', question.id)
+                .eq('language_code', TARGET_LANGUAGE)
+                .single();
+
+            if (existingTranslation) {
+                if (VERBOSE) {
+                    console.log(`   ✅ Translation already exists, skipping translation step.`);
+                }
+                continue;
+            }
+
+            // 3. Translate Content
             const translatedQuestion = await translateText(question.question_text_it);
             if (VERBOSE) {
                 console.log(`   ✅ Question translated`);
@@ -231,11 +276,11 @@ async function translateQuestions() {
         }
 
         if (!VERBOSE && (translated % PROGRESS_INTERVAL === 0 || translated === questionsToTranslate.length)) {
-            console.log(`📊 Progress: ${translated}/${questionsToTranslate.length} questions translated`);
+            console.log(`📊 Progress: ${translated}/${questionsToTranslate.length} questions processed`);
         }
     }
 
-    console.log(`\n📊 Questions Summary: ${translated} translated, ${failed} failed\n`);
+    console.log(`\n📊 Questions Summary: ${translated} processed, ${failed} failed\n`);
 }
 
 async function runTranslations() {
