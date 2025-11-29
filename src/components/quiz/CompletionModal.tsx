@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Star, Home, ArrowRight } from 'lucide-react';
-import clsx from 'clsx';
+import { Trophy, Star, ArrowRight } from 'lucide-react';
 
 interface CompletionModalProps {
     xpEarned: number;
