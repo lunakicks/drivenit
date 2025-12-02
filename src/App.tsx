@@ -81,8 +81,9 @@ function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-swan-white">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-swan-white gap-4">
         <Logo size="lg" variant="icon" className="animate-pulse" />
+        <p className="text-feather-green font-bold text-xl">Loading...</p>
       </div>
     );
   }

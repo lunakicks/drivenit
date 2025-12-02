@@ -26,7 +26,7 @@ export const QuizPage: React.FC = () => {
         correctAnswers
     } = useQuizStore();
 
-    const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak, recordWrongAnswer, wrongAnswers } = useAuthStore();
+    const { user, bookmarks, flags, updateHearts, addXP, toggleBookmark, toggleFlag, checkStreak, recordWrongAnswer, recordCorrectReview, wrongAnswers, mistakeProgress } = useAuthStore();
 
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isChecked, setIsChecked] = useState(false);
@@ -199,6 +199,11 @@ export const QuizPage: React.FC = () => {
         if (correct) {
             addXP(10);
             checkStreak();
+
+            // If in mistakes mode, record the correct review
+            if (mode === 'mistakes') {
+                recordCorrectReview(currentQuestion.id);
+            }
         } else {
             updateHearts(-1);
             recordWrongAnswer(currentQuestion.id);
@@ -218,10 +223,15 @@ export const QuizPage: React.FC = () => {
     const isBookmarked = bookmarks.includes(currentQuestion.id);
     const isFlagged = flags.includes(currentQuestion.id);
 
+    // Calculate review progress for mistakes mode
+    const reviewProgress = mode === 'mistakes' && currentQuestion
+        ? { current: mistakeProgress[currentQuestion.id] || 0, total: 3 }
+        : null;
+
     return (
         <PageTransition>
             <div className="min-h-screen bg-swan-white flex flex-col relative">
-                <QuizHeader progress={progress} hearts={hearts} />
+                <QuizHeader progress={progress} hearts={hearts} reviewProgress={reviewProgress} />
 
                 <FlashCard
                     question={currentQuestion}
@@ -267,6 +277,11 @@ export const QuizPage: React.FC = () => {
                                 isCorrect={isCorrect}
                                 explanation={explanationText}
                                 onContinue={handleContinue}
+                                onFlag={() => user && toggleFlag(currentQuestion.id)}
+                                isFlagged={isFlagged}
+                                onTranslate={() => setTranslated(!translated)}
+                                translated={translated}
+                                disableTranslation={mode === 'test'}
                             />
                         );
                     })()

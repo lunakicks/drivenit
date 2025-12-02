@@ -3,35 +3,43 @@ import { X, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface QuizHeaderProps {
-    progress: number; // 0 to 100
+    progress: number;
     hearts: number;
+    reviewProgress?: { current: number; total: number } | null;
 }
 
-export const QuizHeader: React.FC<QuizHeaderProps> = ({ progress, hearts }) => {
+export const QuizHeader: React.FC<QuizHeaderProps> = ({ progress, hearts, reviewProgress }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="h-16 flex items-center px-4 gap-4 max-w-md mx-auto w-full bg-white">
-            <button
-                onClick={() => navigate('/')}
-                className="text-hare-grey hover:bg-gray-100 p-2 rounded-xl transition-colors"
-            >
-                <X size={28} strokeWidth={2.5} />
-            </button>
-
-            {/* Progress Bar */}
-            <div className="flex-1 h-4 bg-card-border rounded-full overflow-hidden relative">
-                <div
-                    className="absolute top-0 left-0 h-full bg-feather-green rounded-full transition-all duration-500 ease-out"
-                    style={{ width: `${progress}%` }}
+        <div className="sticky top-0 bg-white border-b-2 border-card-border p-4 z-20">
+            <div className="max-w-md mx-auto flex items-center gap-4">
+                <button
+                    onClick={() => navigate(-1)}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                 >
-                    <div className="absolute top-1 right-2 w-4 h-1.5 bg-white/30 rounded-full" />
-                </div>
-            </div>
+                    <X size={24} className="text-hare-grey" />
+                </button>
 
-            <div className="flex items-center gap-1 text-wrong-red font-bold">
-                <Heart className="fill-current animate-bounce-sm" size={28} />
-                <span className="text-lg">{hearts}</span>
+                <div className="flex-1 bg-gray-200 rounded-full h-4 overflow-hidden">
+                    <div
+                        className="bg-feather-green h-full transition-all duration-300"
+                        style={{ width: `${progress}%` }}
+                    />
+                </div>
+
+                {reviewProgress && (
+                    <div className="px-3 py-1 bg-sky-blue/10 border-2 border-sky-blue rounded-lg">
+                        <span className="text-sky-blue font-bold text-sm">
+                            {reviewProgress.current}/{reviewProgress.total}
+                        </span>
+                    </div>
+                )}
+
+                <div className="flex items-center gap-1 text-wrong-red font-bold">
+                    <Heart className="fill-current" size={24} />
+                    <span>{hearts}</span>
+                </div>
             </div>
         </div>
     );

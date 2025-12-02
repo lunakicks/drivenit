@@ -7,6 +7,7 @@ export interface AuthState {
     bookmarks: string[]; // Array of question IDs
     flags: string[]; // Array of question IDs
     wrongAnswers: string[]; // Array of question IDs
+    mistakeProgress: Record<string, number>; // question_id -> review_count
     loading: boolean;
     checkUser: () => Promise<void>;
     signOut: () => Promise<void>;
@@ -15,6 +16,7 @@ export interface AuthState {
     toggleBookmark: (questionId: string) => Promise<void>;
     toggleFlag: (questionId: string) => Promise<void>;
     recordWrongAnswer: (questionId: string) => Promise<void>;
+    recordCorrectReview: (questionId: string) => Promise<void>;
     completeCategory: (categoryId: string) => Promise<void>;
     checkStreak: () => Promise<void>;
 }
@@ -24,6 +26,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     bookmarks: [],
     flags: [],
     wrongAnswers: [],
+    mistakeProgress: {},
     loading: true,
 
     checkUser: async () => {
@@ -52,7 +55,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                 // Fetch wrong answers (user_progress with status 'incorrect')
                 const { data: progressData } = await supabase
                     .from('user_progress')
-                    .select('question_id')
+                    .select('question_id, review_count')
                     .eq('user_id', session.user.id)
                     .eq('status', 'incorrect');
 
@@ -71,15 +74,21 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                         .eq('id', session.user.id);
                 }
 
+                const mistakeProgress: Record<string, number> = {};
+                progressData?.forEach(p => {
+                    mistakeProgress[p.question_id] = p.review_count || 0;
+                });
+
                 set({
                     user: { ...session.user, ...profile, hearts, last_study_date: today },
                     bookmarks: bookmarksData?.map(b => b.question_id) || [],
                     flags: flagsData?.map(f => f.question_id) || [],
                     wrongAnswers: progressData?.map(p => p.question_id) || [],
+                    mistakeProgress,
                     loading: false
                 });
             } else {
-                set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], loading: false });
+                set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], mistakeProgress: {}, loading: false });
             }
 
             supabase.auth.onAuthStateChange(async (_event, session) => {
@@ -102,7 +111,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
                     const { data: progressData } = await supabase
                         .from('user_progress')
-                        .select('question_id')
+                        .select('question_id, review_count')
                         .eq('user_id', session.user.id)
                         .eq('status', 'incorrect');
 
@@ -119,14 +128,20 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                             .eq('id', session.user.id);
                     }
 
+                    const mistakeProgress: Record<string, number> = {};
+                    progressData?.forEach(p => {
+                        mistakeProgress[p.question_id] = p.review_count || 0;
+                    });
+
                     set({
                         user: { ...session.user, ...profile, hearts, last_study_date: today },
                         bookmarks: bookmarksData?.map(b => b.question_id) || [],
                         flags: flagsData?.map(f => f.question_id) || [],
-                        wrongAnswers: progressData?.map(p => p.question_id) || []
+                        wrongAnswers: progressData?.map(p => p.question_id) || [],
+                        mistakeProgress
                     });
                 } else {
-                    set({ user: null, bookmarks: [], flags: [], wrongAnswers: [] });
+                    set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], mistakeProgress: {} });
                 }
             });
         } catch (error) {
@@ -141,7 +156,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         } catch (error) {
             console.error('Error signing out:', error);
         } finally {
-            set({ user: null, bookmarks: [], flags: [], wrongAnswers: [] });
+            set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], mistakeProgress: {} });
         }
     },
 
@@ -273,6 +288,40 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
             if (error) console.error('Error recording wrong answer:', error);
         }
+    },
+
+    recordCorrectReview: async (questionId: string) => {
+        const { user, mistakeProgress, wrongAnswers } = get();
+        if (!user) return;
+
+        const currentCount = mistakeProgress[questionId] || 0;
+        const newCount = currentCount + 1;
+
+        // Update local state
+        const newProgress = { ...mistakeProgress, [questionId]: newCount };
+        let newWrongAnswers = wrongAnswers;
+
+        // If reached 3 reviews, remove from wrong answers
+        if (newCount >= 3) {
+            newWrongAnswers = wrongAnswers.filter(id => id !== questionId);
+            delete newProgress[questionId];
+
+            // Delete from user_progress
+            await supabase
+                .from('user_progress')
+                .delete()
+                .eq('user_id', user.id)
+                .eq('question_id', questionId);
+        } else {
+            // Update review_count in DB
+            await supabase
+                .from('user_progress')
+                .update({ review_count: newCount, updated_at: new Date().toISOString() })
+                .eq('user_id', user.id)
+                .eq('question_id', questionId);
+        }
+
+        set({ mistakeProgress: newProgress, wrongAnswers: newWrongAnswers });
     },
 
     completeCategory: async (categoryId: string) => {
