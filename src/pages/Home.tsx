@@ -3,9 +3,10 @@ import { CategoryNode } from '../components/dashboard/CategoryNode';
 import { PageTransition } from '../components/layout/PageTransition';
 import type { Category } from '../types';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Heart, Loader2 } from 'lucide-react';
+import { Zap, Heart } from 'lucide-react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { supabase } from '../lib/supabase';
+import { Logo } from '../components/common/Logo';
 
 export const Home: React.FC = () => {
     const navigate = useNavigate();
@@ -40,7 +41,11 @@ export const Home: React.FC = () => {
     };
 
     if (loading) {
-        return <div className="min-h-screen flex items-center justify-center"><Loader2 className="animate-spin text-feather-green" size={40} /></div>;
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <Logo size="lg" variant="icon" className="animate-pulse" />
+            </div>
+        );
     }
 
     return (
@@ -49,7 +54,7 @@ export const Home: React.FC = () => {
                 {/* Top Bar */}
                 <header className="sticky top-0 bg-white/90 backdrop-blur-sm border-b-2 border-card-border p-4 flex justify-between items-center z-20">
                     <div className="flex items-center gap-2">
-                        <div className="w-8 h-6 bg-flag-italy rounded-sm border border-card-border" title="Learning Italian"></div>
+                        <Logo size="sm" variant="icon" />
                     </div>
 
                     <div className="flex items-center gap-4">

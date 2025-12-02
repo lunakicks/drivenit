@@ -6,6 +6,7 @@ import { MobileLayout } from './components/layout/MobileLayout';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { AuthPage } from './pages/AuthPage';
 import { useAuthStore } from './stores/useAuthStore';
+import { Logo } from './components/common/Logo';
 
 import { Home } from './pages/Home';
 import { QuizPage } from './pages/QuizPage';
@@ -79,7 +80,11 @@ function App() {
   }, [checkUser]);
 
   if (loading) {
-    return <div className="min-h-screen flex items-center justify-center text-feather-green font-bold text-xl">Loading...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-swan-white">
+        <Logo size="lg" variant="icon" className="animate-pulse" />
+      </div>
+    );
   }
 
   return (
