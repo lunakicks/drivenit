@@ -17,6 +17,7 @@ interface CategoryNodeProps {
     category: Category;
     status: 'locked' | 'active' | 'completed';
     onClick: () => void;
+    translated?: boolean;
 }
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -31,7 +32,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
     'book-open': BookOpen
 };
 
-export const CategoryNode: React.FC<CategoryNodeProps> = ({ category, status, onClick }) => {
+export const CategoryNode: React.FC<CategoryNodeProps> = ({ category, status, onClick, translated = false }) => {
     const IconComponent = ICON_MAP[category.icon_name || 'book-open'] || BookOpen;
 
     return (
@@ -56,7 +57,7 @@ export const CategoryNode: React.FC<CategoryNodeProps> = ({ category, status, on
             </button>
 
             <span className="font-bold text-eel-grey text-sm text-center max-w-[120px]">
-                {category.title_it}
+                {translated && category.title_en ? category.title_en : category.title_it}
             </span>
         </div>
     );

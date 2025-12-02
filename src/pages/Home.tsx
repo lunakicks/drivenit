@@ -3,7 +3,7 @@ import { CategoryNode } from '../components/dashboard/CategoryNode';
 import { PageTransition } from '../components/layout/PageTransition';
 import type { Category } from '../types';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Heart } from 'lucide-react';
+import { Zap, Heart, Languages } from 'lucide-react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { supabase } from '../lib/supabase';
 import { Logo } from '../components/common/Logo';
@@ -14,6 +14,7 @@ export const Home: React.FC = () => {
     const completedCategories = (user as any)?.completed_categories || [];
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(true);
+    const [translated, setTranslated] = useState(false);
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -59,6 +60,16 @@ export const Home: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
+                        <button
+                            onClick={() => setTranslated(!translated)}
+                            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                            title={translated ? "Show Italian" : "Show English"}
+                        >
+                            <Languages
+                                size={24}
+                                className={translated ? "text-feather-green" : "text-hare-grey"}
+                            />
+                        </button>
                         <div className="flex items-center gap-1 text-wrong-red font-bold">
                             <Heart className="fill-current" size={24} />
                             <span>{(user as any)?.hearts ?? 5}</span>
@@ -98,6 +109,7 @@ export const Home: React.FC = () => {
                                 <CategoryNode
                                     category={category}
                                     status={status}
+                                    translated={translated}
                                     onClick={() => {
                                         if (status !== 'locked') {
                                             handleCategoryClick(category.id);
