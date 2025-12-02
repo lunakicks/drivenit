@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { PageTransition } from '../components/layout/PageTransition';
 import { EditProfileModal } from '../components/profile/EditProfileModal';
+import { HeartsModal } from '../components/profile/HeartsModal';
+import { XPModal } from '../components/profile/XPModal';
+import { StreakModal } from '../components/profile/StreakModal';
 import { LogOut, Edit2, User as UserIcon, Heart, Zap, Trophy } from 'lucide-react';
 
 export const ProfilePage: React.FC = () => {
     const { user, signOut, checkUser } = useAuthStore();
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [isHeartsModalOpen, setIsHeartsModalOpen] = useState(false);
+    const [isXPModalOpen, setIsXPModalOpen] = useState(false);
+    const [isStreakModalOpen, setIsStreakModalOpen] = useState(false);
 
     const handleSignOut = async () => {
         await signOut();
@@ -79,21 +85,30 @@ export const ProfilePage: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2">
-                        <Heart className="text-red-500" size={32} fill="currentColor" />
+                    <button
+                        onClick={() => setIsHeartsModalOpen(true)}
+                        className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2 hover:border-wrong-red/30 hover:shadow-md transition-all cursor-pointer"
+                    >
+                        <Heart className="text-wrong-red" size={32} fill="currentColor" />
                         <span className="text-2xl font-bold text-gray-800">{(user as any).hearts ?? 5}</span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Hearts</span>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2">
-                        <Zap className="text-yellow-500" size={32} fill="currentColor" />
+                    </button>
+                    <button
+                        onClick={() => setIsXPModalOpen(true)}
+                        className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2 hover:border-mustard-yellow/30 hover:shadow-md transition-all cursor-pointer"
+                    >
+                        <Zap className="text-mustard-yellow" size={32} fill="currentColor" />
                         <span className="text-2xl font-bold text-gray-800">{(user as any).xp ?? 0}</span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Total XP</span>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2">
+                    </button>
+                    <button
+                        onClick={() => setIsStreakModalOpen(true)}
+                        className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2 hover:border-orange-300 hover:shadow-md transition-all cursor-pointer col-span-2"
+                    >
                         <Trophy className="text-purple-500" size={32} />
                         <span className="text-2xl font-bold text-gray-800">{(user as any).streak ?? 0}</span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Day Streak</span>
-                    </div>
+                    </button>
                 </div>
 
                 <button
@@ -113,6 +128,26 @@ export const ProfilePage: React.FC = () => {
                     email: user.email || '',
                 }}
                 onSave={handleSaveProfile}
+            />
+
+            <HeartsModal
+                isOpen={isHeartsModalOpen}
+                onClose={() => setIsHeartsModalOpen(false)}
+                currentHearts={(user as any).hearts ?? 5}
+            />
+
+            <XPModal
+                isOpen={isXPModalOpen}
+                onClose={() => setIsXPModalOpen(false)}
+                currentXP={(user as any).xp ?? 0}
+                completedCategories={(user as any).completed_categories?.length ?? 0}
+            />
+
+            <StreakModal
+                isOpen={isStreakModalOpen}
+                onClose={() => setIsStreakModalOpen(false)}
+                currentStreak={(user as any).streak ?? 0}
+                lastStudyDate={(user as any).last_study_date}
             />
         </PageTransition>
     );
