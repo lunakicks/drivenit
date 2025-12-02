@@ -1,5 +1,4 @@
 import React from 'react';
-import { ShipWheel } from 'lucide-react'; // Using ShipWheel as a steering wheel proxy, or we can use a custom SVG
 import clsx from 'clsx';
 
 interface LogoProps {
@@ -14,10 +13,10 @@ export const Logo: React.FC<LogoProps> = ({
     variant = 'full'
 }) => {
     const sizeClasses = {
-        sm: 'w-6 h-6',
-        md: 'w-10 h-10',
-        lg: 'w-16 h-16',
-        xl: 'w-24 h-24'
+        sm: 'w-8 h-8',
+        md: 'w-12 h-12',
+        lg: 'w-20 h-20',
+        xl: 'w-32 h-32'
     };
 
     const textSizeClasses = {
@@ -29,21 +28,14 @@ export const Logo: React.FC<LogoProps> = ({
 
     return (
         <div className={clsx("flex items-center gap-3", className)}>
-            <div className={clsx(
-                "bg-feather-green rounded-xl flex items-center justify-center text-white shadow-sm",
-                sizeClasses[size],
-                // Add a subtle rotation or style to make it look like an app icon
-                "transform -rotate-6"
-            )}>
-                {/* Using ShipWheel as a steering wheel metaphor */}
-                <ShipWheel
-                    className={clsx(
-                        "animate-spin-slow", // Optional: slow spin if desired, or static
-                        size === 'sm' ? 'p-1' : 'p-2'
-                    )}
-                    strokeWidth={2.5}
-                />
-            </div>
+            <img
+                src="/images/logo.png"
+                alt="Patente Pro Logo"
+                className={clsx(
+                    "object-contain",
+                    sizeClasses[size]
+                )}
+            />
 
             {variant === 'full' && (
                 <span className={clsx(
