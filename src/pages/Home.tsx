@@ -7,6 +7,8 @@ import { Zap, Heart, Languages } from 'lucide-react';
 import { useAuthStore } from '../stores/useAuthStore';
 import { supabase } from '../lib/supabase';
 import { Logo } from '../components/common/Logo';
+import { HeartsModal } from '../components/profile/HeartsModal';
+import { XPModal } from '../components/profile/XPModal';
 
 export const Home: React.FC = () => {
     const navigate = useNavigate();
@@ -15,6 +17,8 @@ export const Home: React.FC = () => {
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(true);
     const [translated, setTranslated] = useState(false);
+    const [isHeartsModalOpen, setIsHeartsModalOpen] = useState(false);
+    const [isXPModalOpen, setIsXPModalOpen] = useState(false);
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -56,7 +60,7 @@ export const Home: React.FC = () => {
                 {/* Top Bar */}
                 <header className="sticky top-0 bg-white/90 backdrop-blur-sm border-b-2 border-card-border p-4 flex justify-between items-center z-20">
                     <div className="flex items-center gap-2">
-                        <Logo size="sm" variant="icon" />
+                        <Logo size="md" variant="icon" />
                     </div>
 
                     <div className="flex items-center gap-4">
@@ -70,14 +74,20 @@ export const Home: React.FC = () => {
                                 className={translated ? "text-feather-green" : "text-hare-grey"}
                             />
                         </button>
-                        <div className="flex items-center gap-1 text-wrong-red font-bold">
+                        <button
+                            onClick={() => setIsHeartsModalOpen(true)}
+                            className="flex items-center gap-1 text-wrong-red font-bold hover:bg-wrong-red/10 px-2 py-1 rounded-lg transition-colors cursor-pointer"
+                        >
                             <Heart className="fill-current" size={24} />
                             <span>{(user as any)?.hearts ?? 5}</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-mustard-yellow font-bold">
+                        </button>
+                        <button
+                            onClick={() => setIsXPModalOpen(true)}
+                            className="flex items-center gap-1 text-mustard-yellow font-bold hover:bg-mustard-yellow/10 px-2 py-1 rounded-lg transition-colors cursor-pointer"
+                        >
                             <Zap className="fill-current" size={24} />
                             <span>{(user as any)?.xp ?? 0}</span>
-                        </div>
+                        </button>
                     </div>
                 </header>
 
@@ -121,6 +131,19 @@ export const Home: React.FC = () => {
                     })}
                 </div>
             </div>
+
+            <HeartsModal
+                isOpen={isHeartsModalOpen}
+                onClose={() => setIsHeartsModalOpen(false)}
+                currentHearts={(user as any)?.hearts ?? 5}
+            />
+
+            <XPModal
+                isOpen={isXPModalOpen}
+                onClose={() => setIsXPModalOpen(false)}
+                currentXP={(user as any)?.xp ?? 0}
+                completedCategories={completedCategories.length}
+            />
         </PageTransition>
     );
 };
