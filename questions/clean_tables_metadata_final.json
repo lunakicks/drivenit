@@ -1,0 +1,3582 @@
+[
+    {
+        "page_number": 1,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table1.parquet"
+    },
+    {
+        "page_number": 2,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table2.parquet"
+    },
+    {
+        "page_number": 3,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table3.parquet"
+    },
+    {
+        "page_number": 4,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table4.parquet"
+    },
+    {
+        "page_number": 5,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table5.parquet"
+    },
+    {
+        "page_number": 6,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table6.parquet"
+    },
+    {
+        "page_number": 8,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table7.parquet"
+    },
+    {
+        "page_number": 9,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table8.parquet"
+    },
+    {
+        "page_number": 10,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table9.parquet"
+    },
+    {
+        "page_number": 11,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table10.parquet"
+    },
+    {
+        "page_number": 13,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table11.parquet"
+    },
+    {
+        "page_number": 14,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table12.parquet"
+    },
+    {
+        "page_number": 15,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table13.parquet"
+    },
+    {
+        "page_number": 16,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table14.parquet"
+    },
+    {
+        "page_number": 18,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table15.parquet"
+    },
+    {
+        "page_number": 19,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table16.parquet"
+    },
+    {
+        "page_number": 20,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table17.parquet"
+    },
+    {
+        "page_number": 21,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table18.parquet"
+    },
+    {
+        "page_number": 23,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table19.parquet"
+    },
+    {
+        "page_number": 24,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table20.parquet"
+    },
+    {
+        "page_number": 25,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table21.parquet"
+    },
+    {
+        "page_number": 26,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table22.parquet"
+    },
+    {
+        "page_number": 27,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table23.parquet"
+    },
+    {
+        "page_number": 28,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table24.parquet"
+    },
+    {
+        "page_number": 30,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table25.parquet"
+    },
+    {
+        "page_number": 31,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table26.parquet"
+    },
+    {
+        "page_number": 32,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table27.parquet"
+    },
+    {
+        "page_number": 33,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table28.parquet"
+    },
+    {
+        "page_number": 35,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table29.parquet"
+    },
+    {
+        "page_number": 36,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table30.parquet"
+    },
+    {
+        "page_number": 37,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table31.parquet"
+    },
+    {
+        "page_number": 39,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table32.parquet"
+    },
+    {
+        "page_number": 40,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table33.parquet"
+    },
+    {
+        "page_number": 41,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table34.parquet"
+    },
+    {
+        "page_number": 42,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table35.parquet"
+    },
+    {
+        "page_number": 44,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table36.parquet"
+    },
+    {
+        "page_number": 45,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table37.parquet"
+    },
+    {
+        "page_number": 46,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table38.parquet"
+    },
+    {
+        "page_number": 47,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table39.parquet"
+    },
+    {
+        "page_number": 49,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table40.parquet"
+    },
+    {
+        "page_number": 50,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table41.parquet"
+    },
+    {
+        "page_number": 51,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table42.parquet"
+    },
+    {
+        "page_number": 52,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table43.parquet"
+    },
+    {
+        "page_number": 53,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table44.parquet"
+    },
+    {
+        "page_number": 54,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table45.parquet"
+    },
+    {
+        "page_number": 56,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table46.parquet"
+    },
+    {
+        "page_number": 57,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table47.parquet"
+    },
+    {
+        "page_number": 58,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table48.parquet"
+    },
+    {
+        "page_number": 59,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table49.parquet"
+    },
+    {
+        "page_number": 60,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table50.parquet"
+    },
+    {
+        "page_number": 61,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table51.parquet"
+    },
+    {
+        "page_number": 62,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table52.parquet"
+    },
+    {
+        "page_number": 63,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table53.parquet"
+    },
+    {
+        "page_number": 64,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table54.parquet"
+    },
+    {
+        "page_number": 65,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table55.parquet"
+    },
+    {
+        "page_number": 66,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table56.parquet"
+    },
+    {
+        "page_number": 68,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table57.parquet"
+    },
+    {
+        "page_number": 69,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table58.parquet"
+    },
+    {
+        "page_number": 70,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table59.parquet"
+    },
+    {
+        "page_number": 71,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table60.parquet"
+    },
+    {
+        "page_number": 72,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table61.parquet"
+    },
+    {
+        "page_number": 73,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table62.parquet"
+    },
+    {
+        "page_number": 75,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table63.parquet"
+    },
+    {
+        "page_number": 76,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table64.parquet"
+    },
+    {
+        "page_number": 77,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table65.parquet"
+    },
+    {
+        "page_number": 78,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table66.parquet"
+    },
+    {
+        "page_number": 79,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table67.parquet"
+    },
+    {
+        "page_number": 80,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table68.parquet"
+    },
+    {
+        "page_number": 82,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table69.parquet"
+    },
+    {
+        "page_number": 83,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table70.parquet"
+    },
+    {
+        "page_number": 84,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table71.parquet"
+    },
+    {
+        "page_number": 85,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table72.parquet"
+    },
+    {
+        "page_number": 86,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table73.parquet"
+    },
+    {
+        "page_number": 87,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table74.parquet"
+    },
+    {
+        "page_number": 88,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table75.parquet"
+    },
+    {
+        "page_number": 90,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table76.parquet"
+    },
+    {
+        "page_number": 91,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table77.parquet"
+    },
+    {
+        "page_number": 92,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table78.parquet"
+    },
+    {
+        "page_number": 93,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table79.parquet"
+    },
+    {
+        "page_number": 94,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table80.parquet"
+    },
+    {
+        "page_number": 95,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table81.parquet"
+    },
+    {
+        "page_number": 97,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table82.parquet"
+    },
+    {
+        "page_number": 98,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table83.parquet"
+    },
+    {
+        "page_number": 99,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table84.parquet"
+    },
+    {
+        "page_number": 100,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table85.parquet"
+    },
+    {
+        "page_number": 102,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table86.parquet"
+    },
+    {
+        "page_number": 103,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table87.parquet"
+    },
+    {
+        "page_number": 104,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table88.parquet"
+    },
+    {
+        "page_number": 105,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table89.parquet"
+    },
+    {
+        "page_number": 107,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table90.parquet"
+    },
+    {
+        "page_number": 108,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table91.parquet"
+    },
+    {
+        "page_number": 109,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table92.parquet"
+    },
+    {
+        "page_number": 111,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table93.parquet"
+    },
+    {
+        "page_number": 112,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table94.parquet"
+    },
+    {
+        "page_number": 114,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table95.parquet"
+    },
+    {
+        "page_number": 114,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table96.parquet"
+    },
+    {
+        "page_number": 115,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table97.parquet"
+    },
+    {
+        "page_number": 116,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table98.parquet"
+    },
+    {
+        "page_number": 118,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table99.parquet"
+    },
+    {
+        "page_number": 119,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table100.parquet"
+    },
+    {
+        "page_number": 120,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table101.parquet"
+    },
+    {
+        "page_number": 121,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table102.parquet"
+    },
+    {
+        "page_number": 122,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table103.parquet"
+    },
+    {
+        "page_number": 123,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table104.parquet"
+    },
+    {
+        "page_number": 124,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table105.parquet"
+    },
+    {
+        "page_number": 125,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table106.parquet"
+    },
+    {
+        "page_number": 125,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table107.parquet"
+    },
+    {
+        "page_number": 126,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table108.parquet"
+    },
+    {
+        "page_number": 126,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table109.parquet"
+    },
+    {
+        "page_number": 127,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table110.parquet"
+    },
+    {
+        "page_number": 127,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table111.parquet"
+    },
+    {
+        "page_number": 128,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table112.parquet"
+    },
+    {
+        "page_number": 129,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table113.parquet"
+    },
+    {
+        "page_number": 130,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table114.parquet"
+    },
+    {
+        "page_number": 131,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table115.parquet"
+    },
+    {
+        "page_number": 132,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table116.parquet"
+    },
+    {
+        "page_number": 133,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table117.parquet"
+    },
+    {
+        "page_number": 134,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table118.parquet"
+    },
+    {
+        "page_number": 135,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table119.parquet"
+    },
+    {
+        "page_number": 136,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table120.parquet"
+    },
+    {
+        "page_number": 137,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table121.parquet"
+    },
+    {
+        "page_number": 139,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table122.parquet"
+    },
+    {
+        "page_number": 140,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table123.parquet"
+    },
+    {
+        "page_number": 141,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table124.parquet"
+    },
+    {
+        "page_number": 142,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table125.parquet"
+    },
+    {
+        "page_number": 143,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table126.parquet"
+    },
+    {
+        "page_number": 145,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table127.parquet"
+    },
+    {
+        "page_number": 146,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table128.parquet"
+    },
+    {
+        "page_number": 147,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table129.parquet"
+    },
+    {
+        "page_number": 148,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table130.parquet"
+    },
+    {
+        "page_number": 150,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table131.parquet"
+    },
+    {
+        "page_number": 151,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table132.parquet"
+    },
+    {
+        "page_number": 151,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table133.parquet"
+    },
+    {
+        "page_number": 152,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table134.parquet"
+    },
+    {
+        "page_number": 153,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table135.parquet"
+    },
+    {
+        "page_number": 154,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table136.parquet"
+    },
+    {
+        "page_number": 155,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table137.parquet"
+    },
+    {
+        "page_number": 156,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table138.parquet"
+    },
+    {
+        "page_number": 157,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table139.parquet"
+    },
+    {
+        "page_number": 158,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table140.parquet"
+    },
+    {
+        "page_number": 159,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table141.parquet"
+    },
+    {
+        "page_number": 159,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table142.parquet"
+    },
+    {
+        "page_number": 161,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table143.parquet"
+    },
+    {
+        "page_number": 162,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table144.parquet"
+    },
+    {
+        "page_number": 164,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table145.parquet"
+    },
+    {
+        "page_number": 166,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table146.parquet"
+    },
+    {
+        "page_number": 167,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table147.parquet"
+    },
+    {
+        "page_number": 169,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table148.parquet"
+    },
+    {
+        "page_number": 170,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table149.parquet"
+    },
+    {
+        "page_number": 172,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table150.parquet"
+    },
+    {
+        "page_number": 174,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table151.parquet"
+    },
+    {
+        "page_number": 175,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table152.parquet"
+    },
+    {
+        "page_number": 177,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table153.parquet"
+    },
+    {
+        "page_number": 178,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table154.parquet"
+    },
+    {
+        "page_number": 179,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table155.parquet"
+    },
+    {
+        "page_number": 181,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table156.parquet"
+    },
+    {
+        "page_number": 182,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table157.parquet"
+    },
+    {
+        "page_number": 184,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table158.parquet"
+    },
+    {
+        "page_number": 186,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table159.parquet"
+    },
+    {
+        "page_number": 187,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table160.parquet"
+    },
+    {
+        "page_number": 189,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table161.parquet"
+    },
+    {
+        "page_number": 190,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table162.parquet"
+    },
+    {
+        "page_number": 191,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table163.parquet"
+    },
+    {
+        "page_number": 192,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table164.parquet"
+    },
+    {
+        "page_number": 194,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table165.parquet"
+    },
+    {
+        "page_number": 194,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table166.parquet"
+    },
+    {
+        "page_number": 196,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table167.parquet"
+    },
+    {
+        "page_number": 198,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table168.parquet"
+    },
+    {
+        "page_number": 200,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table169.parquet"
+    },
+    {
+        "page_number": 201,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table170.parquet"
+    },
+    {
+        "page_number": 203,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table171.parquet"
+    },
+    {
+        "page_number": 204,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table172.parquet"
+    },
+    {
+        "page_number": 206,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table173.parquet"
+    },
+    {
+        "page_number": 206,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table174.parquet"
+    },
+    {
+        "page_number": 208,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table175.parquet"
+    },
+    {
+        "page_number": 209,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table176.parquet"
+    },
+    {
+        "page_number": 211,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table177.parquet"
+    },
+    {
+        "page_number": 213,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table178.parquet"
+    },
+    {
+        "page_number": 214,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table179.parquet"
+    },
+    {
+        "page_number": 216,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table180.parquet"
+    },
+    {
+        "page_number": 217,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table181.parquet"
+    },
+    {
+        "page_number": 219,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table182.parquet"
+    },
+    {
+        "page_number": 220,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table183.parquet"
+    },
+    {
+        "page_number": 221,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table184.parquet"
+    },
+    {
+        "page_number": 223,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table185.parquet"
+    },
+    {
+        "page_number": 224,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table186.parquet"
+    },
+    {
+        "page_number": 225,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table187.parquet"
+    },
+    {
+        "page_number": 227,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table188.parquet"
+    },
+    {
+        "page_number": 228,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table189.parquet"
+    },
+    {
+        "page_number": 230,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table190.parquet"
+    },
+    {
+        "page_number": 231,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table191.parquet"
+    },
+    {
+        "page_number": 232,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table192.parquet"
+    },
+    {
+        "page_number": 234,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table193.parquet"
+    },
+    {
+        "page_number": 235,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table194.parquet"
+    },
+    {
+        "page_number": 237,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table195.parquet"
+    },
+    {
+        "page_number": 238,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table196.parquet"
+    },
+    {
+        "page_number": 240,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table197.parquet"
+    },
+    {
+        "page_number": 242,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table198.parquet"
+    },
+    {
+        "page_number": 244,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table199.parquet"
+    },
+    {
+        "page_number": 245,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table200.parquet"
+    },
+    {
+        "page_number": 246,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table201.parquet"
+    },
+    {
+        "page_number": 248,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table202.parquet"
+    },
+    {
+        "page_number": 249,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table203.parquet"
+    },
+    {
+        "page_number": 250,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table204.parquet"
+    },
+    {
+        "page_number": 252,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table205.parquet"
+    },
+    {
+        "page_number": 253,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table206.parquet"
+    },
+    {
+        "page_number": 255,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table207.parquet"
+    },
+    {
+        "page_number": 256,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table208.parquet"
+    },
+    {
+        "page_number": 258,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table209.parquet"
+    },
+    {
+        "page_number": 259,
+        "section": "Segnali di precedenza",
+        "table_name": "scratch_pymupdf/DomandeB-table210.parquet"
+    },
+    {
+        "page_number": 260,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table211.parquet"
+    },
+    {
+        "page_number": 261,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table212.parquet"
+    },
+    {
+        "page_number": 263,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table213.parquet"
+    },
+    {
+        "page_number": 265,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table214.parquet"
+    },
+    {
+        "page_number": 267,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table215.parquet"
+    },
+    {
+        "page_number": 268,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table216.parquet"
+    },
+    {
+        "page_number": 270,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table217.parquet"
+    },
+    {
+        "page_number": 271,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table218.parquet"
+    },
+    {
+        "page_number": 273,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table219.parquet"
+    },
+    {
+        "page_number": 274,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table220.parquet"
+    },
+    {
+        "page_number": 276,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table221.parquet"
+    },
+    {
+        "page_number": 277,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table222.parquet"
+    },
+    {
+        "page_number": 278,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table223.parquet"
+    },
+    {
+        "page_number": 280,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table224.parquet"
+    },
+    {
+        "page_number": 281,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table225.parquet"
+    },
+    {
+        "page_number": 283,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table226.parquet"
+    },
+    {
+        "page_number": 284,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table227.parquet"
+    },
+    {
+        "page_number": 285,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table228.parquet"
+    },
+    {
+        "page_number": 287,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table229.parquet"
+    },
+    {
+        "page_number": 288,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table230.parquet"
+    },
+    {
+        "page_number": 289,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table231.parquet"
+    },
+    {
+        "page_number": 290,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table232.parquet"
+    },
+    {
+        "page_number": 292,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table233.parquet"
+    },
+    {
+        "page_number": 293,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table234.parquet"
+    },
+    {
+        "page_number": 294,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table235.parquet"
+    },
+    {
+        "page_number": 296,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table236.parquet"
+    },
+    {
+        "page_number": 297,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table237.parquet"
+    },
+    {
+        "page_number": 299,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table238.parquet"
+    },
+    {
+        "page_number": 300,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table239.parquet"
+    },
+    {
+        "page_number": 301,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table240.parquet"
+    },
+    {
+        "page_number": 302,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table241.parquet"
+    },
+    {
+        "page_number": 304,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table242.parquet"
+    },
+    {
+        "page_number": 305,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table243.parquet"
+    },
+    {
+        "page_number": 307,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table244.parquet"
+    },
+    {
+        "page_number": 307,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table245.parquet"
+    },
+    {
+        "page_number": 309,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table246.parquet"
+    },
+    {
+        "page_number": 311,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table247.parquet"
+    },
+    {
+        "page_number": 312,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table248.parquet"
+    },
+    {
+        "page_number": 313,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table249.parquet"
+    },
+    {
+        "page_number": 315,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table250.parquet"
+    },
+    {
+        "page_number": 316,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table251.parquet"
+    },
+    {
+        "page_number": 317,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table252.parquet"
+    },
+    {
+        "page_number": 319,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table253.parquet"
+    },
+    {
+        "page_number": 320,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table254.parquet"
+    },
+    {
+        "page_number": 322,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table255.parquet"
+    },
+    {
+        "page_number": 322,
+        "section": "Segnali di divieto",
+        "table_name": "scratch_pymupdf/DomandeB-table256.parquet"
+    },
+    {
+        "page_number": 324,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table257.parquet"
+    },
+    {
+        "page_number": 325,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table258.parquet"
+    },
+    {
+        "page_number": 327,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table259.parquet"
+    },
+    {
+        "page_number": 328,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table260.parquet"
+    },
+    {
+        "page_number": 329,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table261.parquet"
+    },
+    {
+        "page_number": 331,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table262.parquet"
+    },
+    {
+        "page_number": 332,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table263.parquet"
+    },
+    {
+        "page_number": 333,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table264.parquet"
+    },
+    {
+        "page_number": 334,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table265.parquet"
+    },
+    {
+        "page_number": 336,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table266.parquet"
+    },
+    {
+        "page_number": 338,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table267.parquet"
+    },
+    {
+        "page_number": 340,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table268.parquet"
+    },
+    {
+        "page_number": 341,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table269.parquet"
+    },
+    {
+        "page_number": 343,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table270.parquet"
+    },
+    {
+        "page_number": 344,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table271.parquet"
+    },
+    {
+        "page_number": 346,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table272.parquet"
+    },
+    {
+        "page_number": 347,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table273.parquet"
+    },
+    {
+        "page_number": 349,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table274.parquet"
+    },
+    {
+        "page_number": 350,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table275.parquet"
+    },
+    {
+        "page_number": 351,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table276.parquet"
+    },
+    {
+        "page_number": 352,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table277.parquet"
+    },
+    {
+        "page_number": 353,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table278.parquet"
+    },
+    {
+        "page_number": 355,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table279.parquet"
+    },
+    {
+        "page_number": 356,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table280.parquet"
+    },
+    {
+        "page_number": 358,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table281.parquet"
+    },
+    {
+        "page_number": 359,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table282.parquet"
+    },
+    {
+        "page_number": 360,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table283.parquet"
+    },
+    {
+        "page_number": 361,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table284.parquet"
+    },
+    {
+        "page_number": 363,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table285.parquet"
+    },
+    {
+        "page_number": 364,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table286.parquet"
+    },
+    {
+        "page_number": 365,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table287.parquet"
+    },
+    {
+        "page_number": 366,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table288.parquet"
+    },
+    {
+        "page_number": 367,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table289.parquet"
+    },
+    {
+        "page_number": 369,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table290.parquet"
+    },
+    {
+        "page_number": 370,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table291.parquet"
+    },
+    {
+        "page_number": 371,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table292.parquet"
+    },
+    {
+        "page_number": 373,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table293.parquet"
+    },
+    {
+        "page_number": 374,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table294.parquet"
+    },
+    {
+        "page_number": 375,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table295.parquet"
+    },
+    {
+        "page_number": 376,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table296.parquet"
+    },
+    {
+        "page_number": 377,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table297.parquet"
+    },
+    {
+        "page_number": 378,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table298.parquet"
+    },
+    {
+        "page_number": 379,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table299.parquet"
+    },
+    {
+        "page_number": 380,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table300.parquet"
+    },
+    {
+        "page_number": 381,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table301.parquet"
+    },
+    {
+        "page_number": 382,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table302.parquet"
+    },
+    {
+        "page_number": 384,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table303.parquet"
+    },
+    {
+        "page_number": 386,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table304.parquet"
+    },
+    {
+        "page_number": 387,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table305.parquet"
+    },
+    {
+        "page_number": 389,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table306.parquet"
+    },
+    {
+        "page_number": 390,
+        "section": "Segnali di pericolo",
+        "table_name": "scratch_pymupdf/DomandeB-table307.parquet"
+    },
+    {
+        "page_number": 391,
+        "section": "Segnali di obbligo",
+        "table_name": "scratch_pymupdf/DomandeB-table308.parquet"
+    },
+    {
+        "page_number": 392,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table309.parquet"
+    },
+    {
+        "page_number": 393,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table310.parquet"
+    },
+    {
+        "page_number": 394,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table311.parquet"
+    },
+    {
+        "page_number": 396,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table312.parquet"
+    },
+    {
+        "page_number": 396,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table313.parquet"
+    },
+    {
+        "page_number": 398,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table314.parquet"
+    },
+    {
+        "page_number": 399,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table315.parquet"
+    },
+    {
+        "page_number": 400,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table316.parquet"
+    },
+    {
+        "page_number": 402,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table317.parquet"
+    },
+    {
+        "page_number": 403,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table318.parquet"
+    },
+    {
+        "page_number": 404,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table319.parquet"
+    },
+    {
+        "page_number": 406,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table320.parquet"
+    },
+    {
+        "page_number": 407,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table321.parquet"
+    },
+    {
+        "page_number": 408,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table322.parquet"
+    },
+    {
+        "page_number": 410,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table323.parquet"
+    },
+    {
+        "page_number": 411,
+        "section": "Segnali di indicazione",
+        "table_name": "scratch_pymupdf/DomandeB-table324.parquet"
+    },
+    {
+        "page_number": 412,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table325.parquet"
+    },
+    {
+        "page_number": 413,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table326.parquet"
+    },
+    {
+        "page_number": 414,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table327.parquet"
+    },
+    {
+        "page_number": 415,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table328.parquet"
+    },
+    {
+        "page_number": 416,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table329.parquet"
+    },
+    {
+        "page_number": 418,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table330.parquet"
+    },
+    {
+        "page_number": 419,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table331.parquet"
+    },
+    {
+        "page_number": 420,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table332.parquet"
+    },
+    {
+        "page_number": 421,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table333.parquet"
+    },
+    {
+        "page_number": 422,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table334.parquet"
+    },
+    {
+        "page_number": 423,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table335.parquet"
+    },
+    {
+        "page_number": 424,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table336.parquet"
+    },
+    {
+        "page_number": 425,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table337.parquet"
+    },
+    {
+        "page_number": 425,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table338.parquet"
+    },
+    {
+        "page_number": 427,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table339.parquet"
+    },
+    {
+        "page_number": 428,
+        "section": "Segnali complementari; segnali temporanei e di cantiere",
+        "table_name": "scratch_pymupdf/DomandeB-table340.parquet"
+    },
+    {
+        "page_number": 429,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table341.parquet"
+    },
+    {
+        "page_number": 429,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table342.parquet"
+    },
+    {
+        "page_number": 430,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table343.parquet"
+    },
+    {
+        "page_number": 431,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table344.parquet"
+    },
+    {
+        "page_number": 433,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table345.parquet"
+    },
+    {
+        "page_number": 434,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table346.parquet"
+    },
+    {
+        "page_number": 435,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table347.parquet"
+    },
+    {
+        "page_number": 436,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table348.parquet"
+    },
+    {
+        "page_number": 437,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table349.parquet"
+    },
+    {
+        "page_number": 438,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table350.parquet"
+    },
+    {
+        "page_number": 439,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table351.parquet"
+    },
+    {
+        "page_number": 440,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table352.parquet"
+    },
+    {
+        "page_number": 441,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table353.parquet"
+    },
+    {
+        "page_number": 442,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table354.parquet"
+    },
+    {
+        "page_number": 443,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table355.parquet"
+    },
+    {
+        "page_number": 444,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table356.parquet"
+    },
+    {
+        "page_number": 444,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table357.parquet"
+    },
+    {
+        "page_number": 445,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table358.parquet"
+    },
+    {
+        "page_number": 446,
+        "section": "Esempi di precedenza (ordine di precedenza agli incroci)",
+        "table_name": "scratch_pymupdf/DomandeB-table359.parquet"
+    },
+    {
+        "page_number": 446,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table360.parquet"
+    },
+    {
+        "page_number": 447,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table361.parquet"
+    },
+    {
+        "page_number": 448,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table362.parquet"
+    },
+    {
+        "page_number": 449,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table363.parquet"
+    },
+    {
+        "page_number": 449,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table364.parquet"
+    },
+    {
+        "page_number": 450,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table365.parquet"
+    },
+    {
+        "page_number": 450,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table366.parquet"
+    },
+    {
+        "page_number": 450,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table367.parquet"
+    },
+    {
+        "page_number": 451,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table368.parquet"
+    },
+    {
+        "page_number": 451,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table369.parquet"
+    },
+    {
+        "page_number": 451,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table370.parquet"
+    },
+    {
+        "page_number": 452,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table371.parquet"
+    },
+    {
+        "page_number": 452,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table372.parquet"
+    },
+    {
+        "page_number": 452,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table373.parquet"
+    },
+    {
+        "page_number": 453,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table374.parquet"
+    },
+    {
+        "page_number": 453,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table375.parquet"
+    },
+    {
+        "page_number": 453,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table376.parquet"
+    },
+    {
+        "page_number": 454,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table377.parquet"
+    },
+    {
+        "page_number": 454,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table378.parquet"
+    },
+    {
+        "page_number": 454,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table379.parquet"
+    },
+    {
+        "page_number": 454,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table380.parquet"
+    },
+    {
+        "page_number": 455,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table381.parquet"
+    },
+    {
+        "page_number": 455,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table382.parquet"
+    },
+    {
+        "page_number": 455,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table383.parquet"
+    },
+    {
+        "page_number": 456,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table384.parquet"
+    },
+    {
+        "page_number": 456,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table385.parquet"
+    },
+    {
+        "page_number": 456,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table386.parquet"
+    },
+    {
+        "page_number": 457,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table387.parquet"
+    },
+    {
+        "page_number": 457,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table388.parquet"
+    },
+    {
+        "page_number": 458,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table389.parquet"
+    },
+    {
+        "page_number": 458,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table390.parquet"
+    },
+    {
+        "page_number": 459,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table391.parquet"
+    },
+    {
+        "page_number": 459,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table392.parquet"
+    },
+    {
+        "page_number": 459,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table393.parquet"
+    },
+    {
+        "page_number": 460,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table394.parquet"
+    },
+    {
+        "page_number": 460,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table395.parquet"
+    },
+    {
+        "page_number": 460,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table396.parquet"
+    },
+    {
+        "page_number": 461,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table397.parquet"
+    },
+    {
+        "page_number": 461,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table398.parquet"
+    },
+    {
+        "page_number": 461,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table399.parquet"
+    },
+    {
+        "page_number": 462,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table400.parquet"
+    },
+    {
+        "page_number": 462,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table401.parquet"
+    },
+    {
+        "page_number": 463,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table402.parquet"
+    },
+    {
+        "page_number": 463,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table403.parquet"
+    },
+    {
+        "page_number": 464,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table404.parquet"
+    },
+    {
+        "page_number": 464,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table405.parquet"
+    },
+    {
+        "page_number": 465,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table406.parquet"
+    },
+    {
+        "page_number": 465,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table407.parquet"
+    },
+    {
+        "page_number": 466,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table408.parquet"
+    },
+    {
+        "page_number": 466,
+        "section": "ciclisti)",
+        "table_name": "scratch_pymupdf/DomandeB-table409.parquet"
+    },
+    {
+        "page_number": 467,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table410.parquet"
+    },
+    {
+        "page_number": 467,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table411.parquet"
+    },
+    {
+        "page_number": 468,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table412.parquet"
+    },
+    {
+        "page_number": 468,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table413.parquet"
+    },
+    {
+        "page_number": 469,
+        "section": "Segnaletica orizzontale; segni sugli ostacoli",
+        "table_name": "scratch_pymupdf/DomandeB-table414.parquet"
+    },
+    {
+        "page_number": 470,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table415.parquet"
+    },
+    {
+        "page_number": 471,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table416.parquet"
+    },
+    {
+        "page_number": 471,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table417.parquet"
+    },
+    {
+        "page_number": 471,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table418.parquet"
+    },
+    {
+        "page_number": 472,
+        "section": "Segnalazioni semaforiche; segnalazioni degli agenti del traffico",
+        "table_name": "scratch_pymupdf/DomandeB-table419.parquet"
+    },
+    {
+        "page_number": 472,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table420.parquet"
+    },
+    {
+        "page_number": 473,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table421.parquet"
+    },
+    {
+        "page_number": 474,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table422.parquet"
+    },
+    {
+        "page_number": 475,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table423.parquet"
+    },
+    {
+        "page_number": 477,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table424.parquet"
+    },
+    {
+        "page_number": 478,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table425.parquet"
+    },
+    {
+        "page_number": 479,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table426.parquet"
+    },
+    {
+        "page_number": 481,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table427.parquet"
+    },
+    {
+        "page_number": 482,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table428.parquet"
+    },
+    {
+        "page_number": 484,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table429.parquet"
+    },
+    {
+        "page_number": 485,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table430.parquet"
+    },
+    {
+        "page_number": 486,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table431.parquet"
+    },
+    {
+        "page_number": 487,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table432.parquet"
+    },
+    {
+        "page_number": 489,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table433.parquet"
+    },
+    {
+        "page_number": 490,
+        "section": "Pannelli integrativi dei segnali",
+        "table_name": "scratch_pymupdf/DomandeB-table434.parquet"
+    },
+    {
+        "page_number": 491,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table435.parquet"
+    },
+    {
+        "page_number": 492,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table436.parquet"
+    },
+    {
+        "page_number": 492,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table437.parquet"
+    },
+    {
+        "page_number": 493,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table438.parquet"
+    },
+    {
+        "page_number": 494,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table439.parquet"
+    },
+    {
+        "page_number": 494,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table440.parquet"
+    },
+    {
+        "page_number": 494,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table441.parquet"
+    },
+    {
+        "page_number": 495,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table442.parquet"
+    },
+    {
+        "page_number": 495,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table443.parquet"
+    },
+    {
+        "page_number": 495,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table444.parquet"
+    },
+    {
+        "page_number": 496,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table445.parquet"
+    },
+    {
+        "page_number": 496,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table446.parquet"
+    },
+    {
+        "page_number": 497,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table447.parquet"
+    },
+    {
+        "page_number": 497,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table448.parquet"
+    },
+    {
+        "page_number": 497,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table449.parquet"
+    },
+    {
+        "page_number": 498,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table450.parquet"
+    },
+    {
+        "page_number": 498,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table451.parquet"
+    },
+    {
+        "page_number": 499,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table452.parquet"
+    },
+    {
+        "page_number": 500,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table453.parquet"
+    },
+    {
+        "page_number": 500,
+        "section": "Limiti di velocità; pericolo e intralcio alla circolazione; comportamenti ai passaggi a livello",
+        "table_name": "scratch_pymupdf/DomandeB-table454.parquet"
+    },
+    {
+        "page_number": 500,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table455.parquet"
+    },
+    {
+        "page_number": 501,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table456.parquet"
+    },
+    {
+        "page_number": 501,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table457.parquet"
+    },
+    {
+        "page_number": 502,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table458.parquet"
+    },
+    {
+        "page_number": 502,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table459.parquet"
+    },
+    {
+        "page_number": 502,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table460.parquet"
+    },
+    {
+        "page_number": 502,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table461.parquet"
+    },
+    {
+        "page_number": 502,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table462.parquet"
+    },
+    {
+        "page_number": 503,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table463.parquet"
+    },
+    {
+        "page_number": 503,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table464.parquet"
+    },
+    {
+        "page_number": 503,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table465.parquet"
+    },
+    {
+        "page_number": 503,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table466.parquet"
+    },
+    {
+        "page_number": 504,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table467.parquet"
+    },
+    {
+        "page_number": 504,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table468.parquet"
+    },
+    {
+        "page_number": 504,
+        "section": "Distanza di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table469.parquet"
+    },
+    {
+        "page_number": 504,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table470.parquet"
+    },
+    {
+        "page_number": 505,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table471.parquet"
+    },
+    {
+        "page_number": 505,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table472.parquet"
+    },
+    {
+        "page_number": 506,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table473.parquet"
+    },
+    {
+        "page_number": 506,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table474.parquet"
+    },
+    {
+        "page_number": 507,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table475.parquet"
+    },
+    {
+        "page_number": 507,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table476.parquet"
+    },
+    {
+        "page_number": 507,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table477.parquet"
+    },
+    {
+        "page_number": 508,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table478.parquet"
+    },
+    {
+        "page_number": 508,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table479.parquet"
+    },
+    {
+        "page_number": 509,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table480.parquet"
+    },
+    {
+        "page_number": 509,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table481.parquet"
+    },
+    {
+        "page_number": 509,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table482.parquet"
+    },
+    {
+        "page_number": 510,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table483.parquet"
+    },
+    {
+        "page_number": 510,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table484.parquet"
+    },
+    {
+        "page_number": 511,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table485.parquet"
+    },
+    {
+        "page_number": 512,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table486.parquet"
+    },
+    {
+        "page_number": 513,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table487.parquet"
+    },
+    {
+        "page_number": 513,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table488.parquet"
+    },
+    {
+        "page_number": 514,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table489.parquet"
+    },
+    {
+        "page_number": 514,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table490.parquet"
+    },
+    {
+        "page_number": 515,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table491.parquet"
+    },
+    {
+        "page_number": 515,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table492.parquet"
+    },
+    {
+        "page_number": 516,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table493.parquet"
+    },
+    {
+        "page_number": 516,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table494.parquet"
+    },
+    {
+        "page_number": 517,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table495.parquet"
+    },
+    {
+        "page_number": 517,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table496.parquet"
+    },
+    {
+        "page_number": 517,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table497.parquet"
+    },
+    {
+        "page_number": 518,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table498.parquet"
+    },
+    {
+        "page_number": 518,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table499.parquet"
+    },
+    {
+        "page_number": 518,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table500.parquet"
+    },
+    {
+        "page_number": 519,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table501.parquet"
+    },
+    {
+        "page_number": 519,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table502.parquet"
+    },
+    {
+        "page_number": 519,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table503.parquet"
+    },
+    {
+        "page_number": 520,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table504.parquet"
+    },
+    {
+        "page_number": 520,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table505.parquet"
+    },
+    {
+        "page_number": 521,
+        "section": "guida dei diversi tipi di veicolo e relativo campo visivo del cond.",
+        "table_name": "scratch_pymupdf/DomandeB-table506.parquet"
+    },
+    {
+        "page_number": 521,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table507.parquet"
+    },
+    {
+        "page_number": 522,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table508.parquet"
+    },
+    {
+        "page_number": 522,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table509.parquet"
+    },
+    {
+        "page_number": 523,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table510.parquet"
+    },
+    {
+        "page_number": 524,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table511.parquet"
+    },
+    {
+        "page_number": 524,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table512.parquet"
+    },
+    {
+        "page_number": 525,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table513.parquet"
+    },
+    {
+        "page_number": 525,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table514.parquet"
+    },
+    {
+        "page_number": 526,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table515.parquet"
+    },
+    {
+        "page_number": 526,
+        "section": "Norme sul sorpasso",
+        "table_name": "scratch_pymupdf/DomandeB-table516.parquet"
+    },
+    {
+        "page_number": 526,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table517.parquet"
+    },
+    {
+        "page_number": 527,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table518.parquet"
+    },
+    {
+        "page_number": 527,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table519.parquet"
+    },
+    {
+        "page_number": 527,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table520.parquet"
+    },
+    {
+        "page_number": 528,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table521.parquet"
+    },
+    {
+        "page_number": 528,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table522.parquet"
+    },
+    {
+        "page_number": 528,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table523.parquet"
+    },
+    {
+        "page_number": 529,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table524.parquet"
+    },
+    {
+        "page_number": 529,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table525.parquet"
+    },
+    {
+        "page_number": 529,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table526.parquet"
+    },
+    {
+        "page_number": 530,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table527.parquet"
+    },
+    {
+        "page_number": 530,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table528.parquet"
+    },
+    {
+        "page_number": 530,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table529.parquet"
+    },
+    {
+        "page_number": 530,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table530.parquet"
+    },
+    {
+        "page_number": 531,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table531.parquet"
+    },
+    {
+        "page_number": 531,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table532.parquet"
+    },
+    {
+        "page_number": 531,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table533.parquet"
+    },
+    {
+        "page_number": 532,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table534.parquet"
+    },
+    {
+        "page_number": 532,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table535.parquet"
+    },
+    {
+        "page_number": 532,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table536.parquet"
+    },
+    {
+        "page_number": 532,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table537.parquet"
+    },
+    {
+        "page_number": 533,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table538.parquet"
+    },
+    {
+        "page_number": 533,
+        "section": "Fermata, sosta, arresto e partenza",
+        "table_name": "scratch_pymupdf/DomandeB-table539.parquet"
+    },
+    {
+        "page_number": 533,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table540.parquet"
+    },
+    {
+        "page_number": 533,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table541.parquet"
+    },
+    {
+        "page_number": 534,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table542.parquet"
+    },
+    {
+        "page_number": 534,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table543.parquet"
+    },
+    {
+        "page_number": 534,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table544.parquet"
+    },
+    {
+        "page_number": 535,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table545.parquet"
+    },
+    {
+        "page_number": 535,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table546.parquet"
+    },
+    {
+        "page_number": 536,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table547.parquet"
+    },
+    {
+        "page_number": 536,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table548.parquet"
+    },
+    {
+        "page_number": 536,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table549.parquet"
+    },
+    {
+        "page_number": 537,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table550.parquet"
+    },
+    {
+        "page_number": 537,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table551.parquet"
+    },
+    {
+        "page_number": 537,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table552.parquet"
+    },
+    {
+        "page_number": 538,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table553.parquet"
+    },
+    {
+        "page_number": 538,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table554.parquet"
+    },
+    {
+        "page_number": 538,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table555.parquet"
+    },
+    {
+        "page_number": 538,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table556.parquet"
+    },
+    {
+        "page_number": 539,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table557.parquet"
+    },
+    {
+        "page_number": 539,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table558.parquet"
+    },
+    {
+        "page_number": 539,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table559.parquet"
+    },
+    {
+        "page_number": 540,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table560.parquet"
+    },
+    {
+        "page_number": 541,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table561.parquet"
+    },
+    {
+        "page_number": 541,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table562.parquet"
+    },
+    {
+        "page_number": 542,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table563.parquet"
+    },
+    {
+        "page_number": 542,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table564.parquet"
+    },
+    {
+        "page_number": 543,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table565.parquet"
+    },
+    {
+        "page_number": 543,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table566.parquet"
+    },
+    {
+        "page_number": 543,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table567.parquet"
+    },
+    {
+        "page_number": 543,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table568.parquet"
+    },
+    {
+        "page_number": 544,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table569.parquet"
+    },
+    {
+        "page_number": 544,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table570.parquet"
+    },
+    {
+        "page_number": 544,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table571.parquet"
+    },
+    {
+        "page_number": 545,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table572.parquet"
+    },
+    {
+        "page_number": 545,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table573.parquet"
+    },
+    {
+        "page_number": 546,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table574.parquet"
+    },
+    {
+        "page_number": 546,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table575.parquet"
+    },
+    {
+        "page_number": 546,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table576.parquet"
+    },
+    {
+        "page_number": 547,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table577.parquet"
+    },
+    {
+        "page_number": 548,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table578.parquet"
+    },
+    {
+        "page_number": 548,
+        "section": "principali; trasporto di persone; carico dei veicoli; pannelli sui veicoli; traino dei veicoli e dei veicoli in avaria; traino dei rimorchi",
+        "table_name": "scratch_pymupdf/DomandeB-table579.parquet"
+    },
+    {
+        "page_number": 548,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table580.parquet"
+    },
+    {
+        "page_number": 549,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table581.parquet"
+    },
+    {
+        "page_number": 549,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table582.parquet"
+    },
+    {
+        "page_number": 549,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table583.parquet"
+    },
+    {
+        "page_number": 549,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table584.parquet"
+    },
+    {
+        "page_number": 550,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table585.parquet"
+    },
+    {
+        "page_number": 550,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table586.parquet"
+    },
+    {
+        "page_number": 550,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table587.parquet"
+    },
+    {
+        "page_number": 550,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table588.parquet"
+    },
+    {
+        "page_number": 551,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table589.parquet"
+    },
+    {
+        "page_number": 551,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table590.parquet"
+    },
+    {
+        "page_number": 551,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table591.parquet"
+    },
+    {
+        "page_number": 552,
+        "section": "Uso delle luci; uso dei dispositivi acustici; spie e simboli",
+        "table_name": "scratch_pymupdf/DomandeB-table592.parquet"
+    },
+    {
+        "page_number": 552,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table593.parquet"
+    },
+    {
+        "page_number": 552,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table594.parquet"
+    },
+    {
+        "page_number": 552,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table595.parquet"
+    },
+    {
+        "page_number": 553,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table596.parquet"
+    },
+    {
+        "page_number": 553,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table597.parquet"
+    },
+    {
+        "page_number": 553,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table598.parquet"
+    },
+    {
+        "page_number": 554,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table599.parquet"
+    },
+    {
+        "page_number": 554,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table600.parquet"
+    },
+    {
+        "page_number": 555,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table601.parquet"
+    },
+    {
+        "page_number": 555,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table602.parquet"
+    },
+    {
+        "page_number": 556,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table603.parquet"
+    },
+    {
+        "page_number": 556,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table604.parquet"
+    },
+    {
+        "page_number": 557,
+        "section": "abbigliamento di sicurezza",
+        "table_name": "scratch_pymupdf/DomandeB-table605.parquet"
+    },
+    {
+        "page_number": 557,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table606.parquet"
+    },
+    {
+        "page_number": 557,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table607.parquet"
+    },
+    {
+        "page_number": 557,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table608.parquet"
+    },
+    {
+        "page_number": 558,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table609.parquet"
+    },
+    {
+        "page_number": 558,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table610.parquet"
+    },
+    {
+        "page_number": 559,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table611.parquet"
+    },
+    {
+        "page_number": 559,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table612.parquet"
+    },
+    {
+        "page_number": 559,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table613.parquet"
+    },
+    {
+        "page_number": 560,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table614.parquet"
+    },
+    {
+        "page_number": 561,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table615.parquet"
+    },
+    {
+        "page_number": 561,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table616.parquet"
+    },
+    {
+        "page_number": 562,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table617.parquet"
+    },
+    {
+        "page_number": 562,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table618.parquet"
+    },
+    {
+        "page_number": 563,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table619.parquet"
+    },
+    {
+        "page_number": 563,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table620.parquet"
+    },
+    {
+        "page_number": 564,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table621.parquet"
+    },
+    {
+        "page_number": 564,
+        "section": "punti; uso di lenti e di altri apparecchi",
+        "table_name": "scratch_pymupdf/DomandeB-table622.parquet"
+    },
+    {
+        "page_number": 565,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table623.parquet"
+    },
+    {
+        "page_number": 566,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table624.parquet"
+    },
+    {
+        "page_number": 566,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table625.parquet"
+    },
+    {
+        "page_number": 566,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table626.parquet"
+    },
+    {
+        "page_number": 567,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table627.parquet"
+    },
+    {
+        "page_number": 567,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table628.parquet"
+    },
+    {
+        "page_number": 567,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table629.parquet"
+    },
+    {
+        "page_number": 568,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table630.parquet"
+    },
+    {
+        "page_number": 568,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table631.parquet"
+    },
+    {
+        "page_number": 568,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table632.parquet"
+    },
+    {
+        "page_number": 569,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table633.parquet"
+    },
+    {
+        "page_number": 569,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table634.parquet"
+    },
+    {
+        "page_number": 569,
+        "section": "motocicli",
+        "table_name": "scratch_pymupdf/DomandeB-table635.parquet"
+    },
+    {
+        "page_number": 570,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table636.parquet"
+    },
+    {
+        "page_number": 570,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table637.parquet"
+    },
+    {
+        "page_number": 570,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table638.parquet"
+    },
+    {
+        "page_number": 571,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table639.parquet"
+    },
+    {
+        "page_number": 571,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table640.parquet"
+    },
+    {
+        "page_number": 571,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table641.parquet"
+    },
+    {
+        "page_number": 571,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table642.parquet"
+    },
+    {
+        "page_number": 571,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table643.parquet"
+    },
+    {
+        "page_number": 572,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table644.parquet"
+    },
+    {
+        "page_number": 572,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table645.parquet"
+    },
+    {
+        "page_number": 572,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table646.parquet"
+    },
+    {
+        "page_number": 572,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table647.parquet"
+    },
+    {
+        "page_number": 573,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table648.parquet"
+    },
+    {
+        "page_number": 573,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table649.parquet"
+    },
+    {
+        "page_number": 573,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table650.parquet"
+    },
+    {
+        "page_number": 573,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table651.parquet"
+    },
+    {
+        "page_number": 574,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table652.parquet"
+    },
+    {
+        "page_number": 574,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table653.parquet"
+    },
+    {
+        "page_number": 574,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table654.parquet"
+    },
+    {
+        "page_number": 574,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table655.parquet"
+    },
+    {
+        "page_number": 575,
+        "section": "Guida in relazione alle qualità e condizioni fisiche e psichiche; alcool, droga e farmaci ; primo soccorso",
+        "table_name": "scratch_pymupdf/DomandeB-table656.parquet"
+    },
+    {
+        "page_number": 575,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table657.parquet"
+    },
+    {
+        "page_number": 575,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table658.parquet"
+    },
+    {
+        "page_number": 576,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table659.parquet"
+    },
+    {
+        "page_number": 576,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table660.parquet"
+    },
+    {
+        "page_number": 576,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table661.parquet"
+    },
+    {
+        "page_number": 577,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table662.parquet"
+    },
+    {
+        "page_number": 577,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table663.parquet"
+    },
+    {
+        "page_number": 577,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table664.parquet"
+    },
+    {
+        "page_number": 577,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table665.parquet"
+    },
+    {
+        "page_number": 578,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table666.parquet"
+    },
+    {
+        "page_number": 578,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table667.parquet"
+    },
+    {
+        "page_number": 578,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table668.parquet"
+    },
+    {
+        "page_number": 578,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table669.parquet"
+    },
+    {
+        "page_number": 579,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table670.parquet"
+    },
+    {
+        "page_number": 579,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table671.parquet"
+    },
+    {
+        "page_number": 579,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table672.parquet"
+    },
+    {
+        "page_number": 580,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table673.parquet"
+    },
+    {
+        "page_number": 580,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table674.parquet"
+    },
+    {
+        "page_number": 580,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table675.parquet"
+    },
+    {
+        "page_number": 580,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table676.parquet"
+    },
+    {
+        "page_number": 580,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table677.parquet"
+    },
+    {
+        "page_number": 581,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table678.parquet"
+    },
+    {
+        "page_number": 581,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table679.parquet"
+    },
+    {
+        "page_number": 581,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table680.parquet"
+    },
+    {
+        "page_number": 582,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table681.parquet"
+    },
+    {
+        "page_number": 582,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table682.parquet"
+    },
+    {
+        "page_number": 582,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table683.parquet"
+    },
+    {
+        "page_number": 582,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table684.parquet"
+    },
+    {
+        "page_number": 582,
+        "section": "Limitazione dei consumi; rispetto dell¿ambiente; inquinamento: atmosferico, acustico, da cattivo smaltimento dei rifiuti",
+        "table_name": "scratch_pymupdf/DomandeB-table685.parquet"
+    },
+    {
+        "page_number": 583,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table686.parquet"
+    },
+    {
+        "page_number": 583,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table687.parquet"
+    },
+    {
+        "page_number": 583,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table688.parquet"
+    },
+    {
+        "page_number": 583,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table689.parquet"
+    },
+    {
+        "page_number": 583,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table690.parquet"
+    },
+    {
+        "page_number": 584,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table691.parquet"
+    },
+    {
+        "page_number": 584,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table692.parquet"
+    },
+    {
+        "page_number": 584,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table693.parquet"
+    },
+    {
+        "page_number": 584,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table694.parquet"
+    },
+    {
+        "page_number": 584,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table695.parquet"
+    },
+    {
+        "page_number": 585,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table696.parquet"
+    },
+    {
+        "page_number": 585,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table697.parquet"
+    },
+    {
+        "page_number": 585,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table698.parquet"
+    },
+    {
+        "page_number": 586,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table699.parquet"
+    },
+    {
+        "page_number": 586,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table700.parquet"
+    },
+    {
+        "page_number": 586,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table701.parquet"
+    },
+    {
+        "page_number": 587,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table702.parquet"
+    },
+    {
+        "page_number": 587,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table703.parquet"
+    },
+    {
+        "page_number": 587,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table704.parquet"
+    },
+    {
+        "page_number": 588,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table705.parquet"
+    },
+    {
+        "page_number": 588,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table706.parquet"
+    },
+    {
+        "page_number": 589,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table707.parquet"
+    },
+    {
+        "page_number": 589,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table708.parquet"
+    },
+    {
+        "page_number": 590,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table709.parquet"
+    },
+    {
+        "page_number": 590,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table710.parquet"
+    },
+    {
+        "page_number": 590,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table711.parquet"
+    },
+    {
+        "page_number": 591,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table712.parquet"
+    },
+    {
+        "page_number": 591,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table713.parquet"
+    },
+    {
+        "page_number": 592,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table714.parquet"
+    },
+    {
+        "page_number": 592,
+        "section": "comportamenti e cautele di guida",
+        "table_name": "scratch_pymupdf/DomandeB-table715.parquet"
+    },
+    {
+        "page_number": 593,
+        "section": "Responsabilità civile, penale, amministrativa; assicurazione R.C.A.; altre forme assicurative legate al veicolo",
+        "table_name": "scratch_pymupdf/DomandeB-table716.parquet"
+    }
+]
