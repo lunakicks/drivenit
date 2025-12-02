@@ -1,14 +1,26 @@
 import React from 'react';
 import { X, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { QuestionNavigator } from './QuestionNavigator';
 
 interface QuizHeaderProps {
     progress: number;
     hearts: number;
     reviewProgress?: { current: number; total: number } | null;
+    questionNavigator?: {
+        totalQuestions: number;
+        currentIndex: number;
+        answeredQuestions: Set<number>;
+        onNavigate: (index: number) => void;
+    } | null;
 }
 
-export const QuizHeader: React.FC<QuizHeaderProps> = ({ progress, hearts, reviewProgress }) => {
+export const QuizHeader: React.FC<QuizHeaderProps> = ({
+    progress,
+    hearts,
+    reviewProgress,
+    questionNavigator
+}) => {
     const navigate = useNavigate();
 
     return (
@@ -27,6 +39,15 @@ export const QuizHeader: React.FC<QuizHeaderProps> = ({ progress, hearts, review
                         style={{ width: `${progress}%` }}
                     />
                 </div>
+
+                {questionNavigator && (
+                    <QuestionNavigator
+                        totalQuestions={questionNavigator.totalQuestions}
+                        currentIndex={questionNavigator.currentIndex}
+                        answeredQuestions={questionNavigator.answeredQuestions}
+                        onNavigate={questionNavigator.onNavigate}
+                    />
+                )}
 
                 {reviewProgress && (
                     <div className="px-3 py-1 bg-sky-blue/10 border-2 border-sky-blue rounded-lg">

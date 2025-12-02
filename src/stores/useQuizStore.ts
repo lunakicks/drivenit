@@ -7,11 +7,14 @@ interface QuizState {
     correctAnswers: number;
     wrongAnswers: number;
     isComplete: boolean;
+    answeredQuestions: Set<number>; // Track which question indices have been answered
 
     // Actions
     startQuiz: (questions: Question[], startIndex?: number) => void;
     answerQuestion: (isCorrect: boolean) => void;
     nextQuestion: () => void;
+    goToQuestion: (index: number) => void;
+    markQuestionAnswered: (index: number) => void;
     resetQuiz: () => void;
     updateQuestion: (id: string, updates: Partial<Question>) => void;
 }
@@ -22,6 +25,7 @@ export const useQuizStore = create<QuizState>((set, get) => ({
     correctAnswers: 0,
     wrongAnswers: 0,
     isComplete: false,
+    answeredQuestions: new Set<number>(),
 
     startQuiz: (questions, startIndex = 0) => {
         set({
@@ -30,6 +34,7 @@ export const useQuizStore = create<QuizState>((set, get) => ({
             correctAnswers: 0,
             wrongAnswers: 0,
             isComplete: false,
+            answeredQuestions: new Set<number>(),
         });
     },
 
@@ -49,6 +54,21 @@ export const useQuizStore = create<QuizState>((set, get) => ({
         }
     },
 
+    goToQuestion: (index: number) => {
+        const { questions } = get();
+        if (index >= 0 && index < questions.length) {
+            set({ currentQuestionIndex: index });
+        }
+    },
+
+    markQuestionAnswered: (index: number) => {
+        set((state) => {
+            const newAnswered = new Set(state.answeredQuestions);
+            newAnswered.add(index);
+            return { answeredQuestions: newAnswered };
+        });
+    },
+
     resetQuiz: () => {
         set({
             currentQuestionIndex: 0,
@@ -56,6 +76,7 @@ export const useQuizStore = create<QuizState>((set, get) => ({
             correctAnswers: 0,
             wrongAnswers: 0,
             isComplete: false,
+            answeredQuestions: new Set<number>(),
         });
     },
 

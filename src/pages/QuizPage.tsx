@@ -22,6 +22,9 @@ export const QuizPage: React.FC = () => {
         startQuiz,
         answerQuestion,
         nextQuestion,
+        goToQuestion,
+        markQuestionAnswered,
+        answeredQuestions,
         isComplete,
         correctAnswers
     } = useQuizStore();
@@ -196,6 +199,9 @@ export const QuizPage: React.FC = () => {
         setIsChecked(true);
         answerQuestion(correct);
 
+        // Mark this question as answered
+        markQuestionAnswered(currentQuestionIndex);
+
         if (correct) {
             addXP(10);
             checkStreak();
@@ -228,10 +234,25 @@ export const QuizPage: React.FC = () => {
         ? { current: mistakeProgress[currentQuestion.id] || 0, total: 3 }
         : null;
 
+    // Calculate question navigator for test mode
+    const questionNavigator = mode === 'test'
+        ? {
+            totalQuestions: questions.length,
+            currentIndex: currentQuestionIndex,
+            answeredQuestions,
+            onNavigate: goToQuestion
+        }
+        : null;
+
     return (
         <PageTransition>
             <div className="min-h-screen bg-swan-white flex flex-col relative">
-                <QuizHeader progress={progress} hearts={hearts} reviewProgress={reviewProgress} />
+                <QuizHeader
+                    progress={progress}
+                    hearts={hearts}
+                    reviewProgress={reviewProgress}
+                    questionNavigator={questionNavigator}
+                />
 
                 <FlashCard
                     question={currentQuestion}
