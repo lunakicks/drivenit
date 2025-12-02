@@ -1,5 +1,15 @@
 import React from 'react';
-import { Check, Star, Lock } from 'lucide-react';
+import {
+    Signpost,
+    CircleSlash,
+    Square,
+    Ban,
+    AlertTriangle,
+    ChevronsRight,
+    TrafficCone,
+    Minus,
+    BookOpen
+} from 'lucide-react';
 import clsx from 'clsx';
 import type { Category } from '../../types';
 
@@ -9,7 +19,21 @@ interface CategoryNodeProps {
     onClick: () => void;
 }
 
+const ICON_MAP: Record<string, React.ElementType> = {
+    'signpost': Signpost,
+    'circle-slash': CircleSlash,
+    'square': Square,
+    'ban': Ban,
+    'alert-triangle': AlertTriangle,
+    'chevrons-right': ChevronsRight,
+    'traffic-cone': TrafficCone,
+    'minus': Minus,
+    'book-open': BookOpen
+};
+
 export const CategoryNode: React.FC<CategoryNodeProps> = ({ category, status, onClick }) => {
+    const IconComponent = ICON_MAP[category.icon_name || 'book-open'] || BookOpen;
+
     return (
         <div className="flex flex-col items-center gap-2 relative z-10">
             <button
@@ -22,9 +46,13 @@ export const CategoryNode: React.FC<CategoryNodeProps> = ({ category, status, on
                     status === 'completed' && "bg-mustard-yellow border-mustard-yellow-dark"
                 )}
             >
-                {status === 'locked' && <Lock className="text-white" size={32} />}
-                {status === 'active' && <Star className="text-white fill-white" size={32} />}
-                {status === 'completed' && <Check className="text-white" size={32} strokeWidth={4} />}
+                <IconComponent
+                    size={32}
+                    className={clsx(
+                        status === 'locked' && "text-gray-100",
+                        (status === 'active' || status === 'completed') && "text-white"
+                    )}
+                />
             </button>
 
             <span className="font-bold text-eel-grey text-sm text-center max-w-[120px]">
