@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthStore } from '../stores/useAuthStore';
+import { Logo } from '../components/common/Logo';
 
 import type { Question } from '../types';
 import { Bookmark } from 'lucide-react';
@@ -47,7 +48,14 @@ export const BookmarksPage: React.FC = () => {
         fetchBookmarks();
     }, [bookmarks]);
 
-    if (loading) return <div className="p-6">Loading saved questions...</div>;
+    if (loading) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center bg-swan-white gap-4">
+                <Logo size="lg" variant="icon" className="animate-pulse" />
+                <p className="text-feather-green font-bold text-xl">Loading saved questions...</p>
+            </div>
+        );
+    }
 
     return (
         <PageTransition>
