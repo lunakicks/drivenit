@@ -3,7 +3,7 @@ import { supabase } from '../lib/supabase';
 import type { User } from '@supabase/supabase-js';
 
 export interface AuthState {
-    user: (User & { hearts?: number; xp?: number; streak?: number; last_study_date?: string; completed_categories?: string[] }) | null;
+    user: (User & { hearts?: number; xp?: number; streak?: number; last_study_date?: string; completed_categories?: string[]; display_name?: string }) | null;
     bookmarks: string[]; // Array of question IDs
     flags: string[]; // Array of question IDs
     wrongAnswers: string[]; // Array of question IDs

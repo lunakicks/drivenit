@@ -32,18 +32,12 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     }, [isOpen, initialData]);
 
     const validate = () => {
-        const newErrors: { displayName?: string; email?: string } = {};
+        const newErrors: { displayName?: string } = {};
 
         if (!formData.displayName.trim()) {
             newErrors.displayName = 'Display name is required';
         } else if (formData.displayName.length < 2) {
             newErrors.displayName = 'Display name must be at least 2 characters';
-        }
-
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Invalid email format';
         }
 
         setErrors(newErrors);
@@ -121,13 +115,11 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                                 id="email"
                                 type="email"
                                 value={formData.email}
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className={`w-full p-3 rounded-xl border-2 ${errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200 focus:border-blue-500'} outline-none transition-colors`}
+                                disabled
+                                className="w-full p-3 rounded-xl border-2 border-gray-200 bg-gray-100 text-gray-500 cursor-not-allowed outline-none"
                                 placeholder="Enter your email"
                             />
-                            {errors.email && (
-                                <p className="text-red-500 text-xs mt-1 font-medium">{errors.email}</p>
-                            )}
+                            <p className="text-xs text-gray-500 mt-1">Email cannot be changed</p>
                         </div>
 
                         <div className="pt-4 flex gap-3">

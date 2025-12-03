@@ -19,45 +19,25 @@ export const ProfilePage: React.FC = () => {
     };
 
     const handleSaveProfile = async (data: { displayName: string; email: string }) => {
-        // In a real app, you would call an API to update the user's profile here.
-        // For now, we'll just refresh the user data.
-        // Assuming there's an updateProfile method in useAuthStore or similar, 
-        // but since I don't see one in the interface I saw earlier, 
-        // I will assume the modal handles the API call via a prop or we just reload.
-
-        // Actually, looking at EditProfileModal props, it takes onSave.
-        // And looking at useAuthStore, it doesn't have updateProfile.
-        // I'll implement a dummy onSave or use supabase directly if needed, 
-        // but for now let's just re-fetch user.
-
-        // Wait, the EditProfileModal was updated to take onSave.
-        // Let's assume we pass a function that updates supabase.
-        // Since I can't easily add a new method to store right now without reading it again,
-        // I will implement the update logic here using supabase directly if possible,
-        // or just mock it for the UI restoration.
-
-        // Actually, better to just pass a function that calls checkUser after a small delay 
-        // or assume the modal does the update. 
-        // The EditProfileModal I saw earlier calls onSave(formData).
-
-        // Let's import supabase to do the update
         const { supabase } = await import('../lib/supabase');
 
         if (user) {
+            // Update user metadata
             await supabase.auth.updateUser({
                 data: { display_name: data.displayName }
             });
-            // Also update email if changed (requires confirmation usually)
-            if (data.email !== user.email) {
-                await supabase.auth.updateUser({ email: data.email });
-            }
+
+            // Update display_name in profiles table
+            await supabase
+                .from('profiles')
+                .update({ display_name: data.displayName })
+                .eq('id', user.id);
+
             await checkUser();
         }
     };
 
-    if (!user) {
-        return null;
-    }
+    if (!user) return null;
 
     return (
         <PageTransition>
@@ -78,7 +58,7 @@ export const ProfilePage: React.FC = () => {
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-gray-800">
-                            {user.user_metadata?.display_name || user.email?.split('@')[0] || 'User'}
+                            {user.display_name || user.user_metadata?.display_name || user.email?.split('@')[0] || 'User'}
                         </h2>
                         <p className="text-gray-500 font-medium">{user.email}</p>
                     </div>
@@ -90,7 +70,7 @@ export const ProfilePage: React.FC = () => {
                         className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2 hover:border-wrong-red/30 hover:shadow-md transition-all cursor-pointer"
                     >
                         <Heart className="text-wrong-red" size={32} fill="currentColor" />
-                        <span className="text-2xl font-bold text-gray-800">{(user as any).hearts ?? 5}</span>
+                        <span className="text-2xl font-bold text-gray-800">{user.hearts ?? 5}</span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Hearts</span>
                     </button>
                     <button
@@ -98,7 +78,7 @@ export const ProfilePage: React.FC = () => {
                         className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2 hover:border-mustard-yellow/30 hover:shadow-md transition-all cursor-pointer"
                     >
                         <Zap className="text-mustard-yellow" size={32} fill="currentColor" />
-                        <span className="text-2xl font-bold text-gray-800">{(user as any).xp ?? 0}</span>
+                        <span className="text-2xl font-bold text-gray-800">{user.xp ?? 0}</span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Total XP</span>
                     </button>
                     <button
@@ -106,7 +86,7 @@ export const ProfilePage: React.FC = () => {
                         className="bg-white p-4 rounded-2xl shadow-sm border-2 border-gray-100 flex flex-col items-center space-y-2 hover:border-orange-300 hover:shadow-md transition-all cursor-pointer col-span-2"
                     >
                         <Trophy className="text-purple-500" size={32} />
-                        <span className="text-2xl font-bold text-gray-800">{(user as any).streak ?? 0}</span>
+                        <span className="text-2xl font-bold text-gray-800">{user.streak ?? 0}</span>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Day Streak</span>
                     </button>
                 </div>
@@ -124,7 +104,7 @@ export const ProfilePage: React.FC = () => {
                 isOpen={isEditModalOpen}
                 onClose={() => setIsEditModalOpen(false)}
                 initialData={{
-                    displayName: user.user_metadata?.display_name || '',
+                    displayName: user.display_name || user.user_metadata?.display_name || '',
                     email: user.email || '',
                 }}
                 onSave={handleSaveProfile}
@@ -133,21 +113,21 @@ export const ProfilePage: React.FC = () => {
             <HeartsModal
                 isOpen={isHeartsModalOpen}
                 onClose={() => setIsHeartsModalOpen(false)}
-                currentHearts={(user as any).hearts ?? 5}
+                currentHearts={user.hearts ?? 5}
             />
 
             <XPModal
                 isOpen={isXPModalOpen}
                 onClose={() => setIsXPModalOpen(false)}
-                currentXP={(user as any).xp ?? 0}
-                completedCategories={(user as any).completed_categories?.length ?? 0}
+                currentXP={user.xp ?? 0}
+                completedCategories={user.completed_categories?.length ?? 0}
             />
 
             <StreakModal
                 isOpen={isStreakModalOpen}
                 onClose={() => setIsStreakModalOpen(false)}
-                currentStreak={(user as any).streak ?? 0}
-                lastStudyDate={(user as any).last_study_date}
+                currentStreak={user.streak ?? 0}
+                lastStudyDate={user.last_study_date}
             />
         </PageTransition>
     );
