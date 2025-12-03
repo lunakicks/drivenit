@@ -138,10 +138,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
                         bookmarks: bookmarksData?.map(b => b.question_id) || [],
                         flags: flagsData?.map(f => f.question_id) || [],
                         wrongAnswers: progressData?.map(p => p.question_id) || [],
-                        mistakeProgress
+                        mistakeProgress,
+                        loading: false
                     });
                 } else {
-                    set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], mistakeProgress: {} });
+                    set({ user: null, bookmarks: [], flags: [], wrongAnswers: [], mistakeProgress: {}, loading: false });
                 }
             });
         } catch (error) {
