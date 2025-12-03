@@ -22,18 +22,37 @@ export const ProfilePage: React.FC = () => {
         const { supabase } = await import('../lib/supabase');
 
         if (user) {
-            // Update user metadata
-            await supabase.auth.updateUser({
-                data: { display_name: data.displayName }
-            });
+            try {
+                // Update user metadata
+                const { error: authError } = await supabase.auth.updateUser({
+                    data: { display_name: data.displayName }
+                });
 
-            // Update display_name in profiles table
-            await supabase
-                .from('profiles')
-                .update({ display_name: data.displayName })
-                .eq('id', user.id);
+                if (authError) {
+                    console.error('Error updating auth metadata:', authError);
+                }
 
-            await checkUser();
+                // Update display_name in profiles table using RPC
+                const { error: profileError } = await supabase
+                    .rpc('update_profile_display_name', { new_display_name: data.displayName });
+
+                if (profileError) {
+                    console.error('Error updating profile via RPC:', profileError);
+                    // Fallback to direct update if RPC fails (e.g. not applied yet)
+                    const { error: directError } = await supabase
+                        .from('profiles')
+                        .update({ display_name: data.displayName })
+                        .eq('id', user.id);
+
+                    if (directError) console.error('Direct update also failed:', directError);
+                } else {
+                    console.log('Profile updated successfully via RPC');
+                }
+
+                await checkUser();
+            } catch (err) {
+                console.error('Unexpected error saving profile:', err);
+            }
         }
     };
 

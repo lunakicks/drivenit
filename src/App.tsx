@@ -13,6 +13,8 @@ import { QuizPage } from './pages/QuizPage';
 import { PracticePage } from './pages/PracticePage';
 import { BookmarksPage } from './pages/BookmarksPage';
 import { ProfilePage } from './pages/ProfilePage';
+import { Onboarding } from './pages/Onboarding';
+import { InitialRoute } from './components/layout/InitialRoute';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -20,9 +22,13 @@ const AppRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/login" element={<AuthPage />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/login" element={<Navigate to="/auth" replace />} />
 
-        <Route path="/" element={
+        <Route path="/" element={<InitialRoute />} />
+
+        <Route path="/home" element={
           <ProtectedRoute>
             <MobileLayout>
               <Home />

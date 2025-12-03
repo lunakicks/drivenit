@@ -10,7 +10,7 @@ export const AuthPage: React.FC = () => {
     const { user } = useAuthStore();
 
     if (user) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/home" replace />;
     }
 
     return (

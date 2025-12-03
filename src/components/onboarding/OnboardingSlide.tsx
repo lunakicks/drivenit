@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LucideIcon } from 'lucide-react';
+import { type LucideIcon as IconType } from 'lucide-react';
 
 interface OnboardingSlideProps {
     title: string;
     description: string;
-    Icon: LucideIcon;
+    Icon: IconType;
     color: string;
 }
 
