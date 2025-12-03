@@ -8,6 +8,8 @@ import { FlashCard } from '../components/quiz/FlashCard';
 import { ExplanationView } from '../components/quiz/ExplanationView';
 import { CompletionModal } from '../components/quiz/CompletionModal';
 import { PageTransition } from '../components/layout/PageTransition';
+import { Logo } from '../components/common/Logo';
+import { AlertCircle } from 'lucide-react';
 
 import clsx from 'clsx';
 
@@ -189,7 +191,32 @@ export const QuizPage: React.FC = () => {
         preFetchData();
     }, [currentQuestion, translation]);
 
-    if (!currentQuestion) return <div className="p-4">Loading...</div>;
+    if (questions.length === 0) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center bg-swan-white gap-4 p-6 text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mb-2">
+                    <AlertCircle size={32} />
+                </div>
+                <h2 className="text-xl font-bold text-gray-800">No Questions Found</h2>
+                <p className="text-gray-500">We couldn't find any questions for this section.</p>
+                <button
+                    onClick={() => navigate('/')}
+                    className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-600 transition-colors"
+                >
+                    Go Home
+                </button>
+            </div>
+        );
+    }
+
+    if (!currentQuestion) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center bg-swan-white gap-4">
+                <Logo size="lg" variant="icon" className="animate-pulse" />
+                <p className="text-feather-green font-bold text-xl">Loading quiz...</p>
+            </div>
+        );
+    }
 
     const handleCheck = async () => {
         if (selectedOption === null) return;
