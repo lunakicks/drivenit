@@ -19,40 +19,65 @@ export const ProfilePage: React.FC = () => {
     };
 
     const handleSaveProfile = async (data: { displayName: string; email: string }) => {
+        console.log('🔵 handleSaveProfile called with:', data);
         const { supabase } = await import('../lib/supabase');
 
         if (user) {
+            console.log('🔵 User exists, proceeding with update. User ID:', user.id);
             try {
-                // Update user metadata
-                const { error: authError } = await supabase.auth.updateUser({
-                    data: { display_name: data.displayName }
-                });
+                // Update display_name in profiles table using RPC
+                console.log('🔵 Calling RPC function...');
 
-                if (authError) {
-                    console.error('Error updating auth metadata:', authError);
+                let rpcResult = null;
+                let profileError = null;
+
+                try {
+                    const rpcTimeoutPromise = new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error('RPC timeout')), 5000)
+                    );
+
+                    const rpcCallPromise = supabase
+                        .rpc('update_profile_display_name', { new_display_name: data.displayName });
+
+                    const response = await Promise.race([rpcCallPromise, rpcTimeoutPromise]) as any;
+                    rpcResult = response.data;
+                    profileError = response.error;
+                } catch (timeoutErr) {
+                    console.warn('⚠️ RPC call timed out, will try direct update...', timeoutErr);
+                    profileError = timeoutErr;
                 }
 
-                // Update display_name in profiles table using RPC
-                const { error: profileError } = await supabase
-                    .rpc('update_profile_display_name', { new_display_name: data.displayName });
+                console.log('🔵 RPC response:', { rpcResult, profileError });
 
                 if (profileError) {
-                    console.error('Error updating profile via RPC:', profileError);
+                    console.error('❌ Error updating profile via RPC:', profileError);
                     // Fallback to direct update if RPC fails (e.g. not applied yet)
+                    console.log('🔵 Step 3: Trying direct update fallback...');
                     const { error: directError } = await supabase
                         .from('profiles')
                         .update({ display_name: data.displayName })
                         .eq('id', user.id);
 
-                    if (directError) console.error('Direct update also failed:', directError);
+                    if (directError) {
+                        console.error('❌ Direct update also failed:', directError);
+                        throw new Error(`Profile update failed: ${directError.message}`);
+                    } else {
+                        console.log('✅ Direct update succeeded');
+                    }
                 } else {
-                    console.log('Profile updated successfully via RPC');
+                    console.log('✅ Profile updated successfully via RPC:', rpcResult);
                 }
 
+                console.log('🔵 Step 4: Refreshing user data with checkUser()...');
                 await checkUser();
+                console.log('✅ Profile save completed successfully!');
             } catch (err) {
-                console.error('Unexpected error saving profile:', err);
+                console.error('❌ Unexpected error saving profile:', err);
+                throw err; // Re-throw to trigger the error handling in EditProfileModal
             }
+        } else {
+            console.error('❌ No user found!');
+            throw new Error('No user found');
         }
     };
 
