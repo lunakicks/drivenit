@@ -27,3 +27,4 @@ dist-ssr
 *.csv
 *.parquet
 *.png
+!public/images/logo.png
