@@ -30,7 +30,7 @@ export const Logo: React.FC<LogoProps> = ({
         <div className={clsx("flex items-center gap-3", className)}>
             <img
                 src="/images/logo.png"
-                alt="Patente Pro Logo"
+                alt="drivenit Logo"
                 className={clsx(
                     "object-contain",
                     sizeClasses[size]
@@ -42,7 +42,7 @@ export const Logo: React.FC<LogoProps> = ({
                     "font-extrabold text-feather-green tracking-tight",
                     textSizeClasses[size]
                 )}>
-                    Patente Pro
+                    drivenit
                 </span>
             )}
         </div>

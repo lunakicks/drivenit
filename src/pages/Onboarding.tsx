@@ -7,7 +7,7 @@ import { haptics } from '../utils/haptics';
 
 const SLIDES = [
     {
-        title: "Welcome to Patente Pro",
+        title: "Welcome to drivenit",
         description: "Master your Italian driving test with interactive practice designed to help you pass.",
         Icon: Flag,
         color: "#58CC02" // feather-green
@@ -100,8 +100,8 @@ export const Onboarding: React.FC = () => {
                         <div
                             key={index}
                             className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? 'w-8 bg-blue-500'
-                                    : 'w-2 bg-gray-200'
+                                ? 'w-8 bg-blue-500'
+                                : 'w-2 bg-gray-200'
                                 }`}
                         />
                     ))}

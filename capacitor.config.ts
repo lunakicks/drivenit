@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.patentepro.app',
-  appName: 'Patente Pro',
+  appId: 'com.drivenit.app',
+  appName: 'drivenit',
   webDir: 'dist',
   server: {
     androidScheme: 'https'

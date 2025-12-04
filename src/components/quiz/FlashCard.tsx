@@ -1,5 +1,5 @@
 import React from 'react';
-import { Volume2, Bookmark, Languages, Flag } from 'lucide-react';
+import { Bookmark, Languages, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import type { Question } from '../../types';
 import { translateQuestion } from '../../lib/translation';
@@ -69,11 +69,8 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                 )}
 
                 <div className="flex-1">
-                    <div className="flex items-start gap-2 mb-2">
-                        <button className="p-2 bg-sky-blue text-white rounded-xl shadow-btn active:translate-y-[2px] active:shadow-none transition-all">
-                            <Volume2 size={24} />
-                        </button>
-                        <div className="p-3 border-2 border-card-border rounded-2xl rounded-tl-none bg-white relative group">
+                    <div className="mb-2">
+                        <div className="p-3 border-2 border-card-border rounded-2xl bg-white relative group">
                             <InteractiveText text={displayText} className="text-lg text-eel-grey font-medium" />
                         </div>
                     </div>
